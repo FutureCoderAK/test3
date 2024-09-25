@@ -1,0 +1,471 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    position: absolute;
+    min-height: 100vh;
+    content: '';
+    width: 100%;
+}
+
+/* Start Header */
+
+header {
+    position: absolute;
+    width: 100%;
+    background-color: hsla(198, 80%, 30%, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 10px 20px;
+    z-index: 100000;
+    direction: rtl;
+}
+
+header.sticky {
+    padding: 10px 100px;
+    background-color: rgb(0, 0, 0);
+}
+
+header nav {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+}
+
+header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header nav ul li {
+    list-style: none;
+    position: relative;
+    display: inline-block;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    margin: 0 15px;
+    transition: 0.6s;
+}
+
+header img {
+    width: 60px;
+    position: relative;
+    transition: 0.6s;
+}
+
+/* End Header */
+
+/* Stert Section */
+
+.slider {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+}
+
+.slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    visibility: hidden;
+    opacity: 0;
+    /* زيادة المدة هنا */
+    animation: slider 50s linear infinite;
+    /* زيادة المدة هنا */
+}
+
+@keyframes slider {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    2% {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    18% {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    20%,
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.slider .slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slider .slide:nth-child(2) {
+    animation-delay: 10s;
+    /* زيادة التأخير */
+}
+
+.slider .slide:nth-child(3) {
+    animation-delay: 20s;
+    /* زيادة التأخير */
+}
+
+.slider .slide:nth-child(4) {
+    animation-delay: 30s;
+    /* زيادة التأخير */
+}
+
+.slider .slide:nth-child(5) {
+    animation-delay: 40s;
+    /* زيادة التأخير */
+}
+
+.slider .slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.3;
+}
+
+.slider .slide .content {
+    position: absolute;
+    top: 50vh;
+    right: 60px;
+    color: rgb(5, 5, 5);
+    direction: rtl;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider .slide .content h1 {
+    margin: 0;
+    padding: 10px;
+    font-size: 48px;
+    color: rgb(0, 0, 0);
+}
+
+.slider .slide .content.p {
+    margin: 10px 0 0;
+    padding: 10px;
+    font-size: 18px;
+    width: 50%;
+    color: rgb(0, 0, 0);
+}
+
+/* End Section */
+
+/* Start Form */
+
+form {
+    width: 50%;
+    height: 320px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 20px 5px 20px 0;
+    box-shadow: 0 0 5px #000000f8;
+    background: #ffffff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form article.side-left {
+    width: 30%;
+    height: 320px;
+    background: #ffffff;
+    box-shadow: 0 0 5px #000000f8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form article.side-left img {
+    width: 100%;
+}
+
+form article.side-right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+form article.side-right p.create-id-1,
+.create-id-2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+form article.side-right p.create-id-2 {
+    display: none;
+}
+
+form article.side-right input.name,
+.email,
+.id,
+.phone-number {
+    width: 90%;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+    outline: none;
+    border-radius: 5px;
+}
+
+form article.side-right input.email {
+    direction: ltr;
+}
+
+form article.side-right article.id-and-phone-number {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+form article.side-right article.id-and-phone-number input.id,
+.phone-number {
+    width: 50%;
+    padding: 10px;
+    outline: none;
+}
+
+form article.side-right button {
+    width: 25%;
+    padding: 10px;
+    outline: none;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+form article.side-right button:hover {
+    background: #fbcc1d;
+}
+
+/* End Form */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s linear;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+section.article-txt{
+	width: 100%;
+    margin-top: 50px;
+}
+section.article-txt .txt-head{
+    width: 92%;
+    height: 100px;
+    background: #eee;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    padding: 10px;
+}
+.txt-head p{
+   font-size: 28px;
+   font-weight: 500;
+}
+.txt-head {
+    overflow: hidden;
+}
+.txt-head p {
+    opacity: 0; /* يبدأ النص غير مرئي */
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.5s ease;
+}
+
+
+
+
+section.cards2{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+section.cards2 .roqiatna{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 400px;
+    transition: 0.8s;
+    position: relative;
+    padding: 10px;
+}
+section.cards2 img{
+    width: 100px;
+    border-radius: 50%;
+    background: cover;
+}
+section.cards2 .resaltna{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 400px;
+    transition: 0.8s;
+    position: relative;
+    padding: 10px;
+    /* overflow: hidden; */
+}
+.resaltna::before,.roqiatna::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #eee;
+    z-index: -1;
+    transition: 0.8s;
+}
+.resaltna::before,.roqiatna::before{
+    top: 0;
+    border-radius: 0 0 20% 20%;
+}
+.resaltna:hover::before,.roqiatna:hover::before{
+    height: 100%;
+}
+@media screen and (max-width: 723px) {
+    section.cards2{
+        display: flex;
+        flex-direction: column;
+    }
+    section.cards2 .resaltna,section.cards2 .roqiatna{
+        width: 90%;
+    }
+}
+/* .style-horizon::after{
+    content: '';
+    background: red;
+    min-width: 400px;
+    height: 1px;
+    display: block;
+    
+} */
+
+
+
+section.counter-wrapper{
+    background-image: url(../img/financial-economy-3d-rendering-of-prosperous-business-chart-with-golden-graph-and-concept-on-success-background_9829616.jpg!w700wp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 9%;
+    margin-top: 5px;
+    position: relative;
+    justify-content: space-around;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+.counter-wrapper::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+.counter{
+    text-align: center;
+    color: #ddd;
+    z-index: 2;
+    position: relative;
+}
+.counter .count{
+    font-size: 30px;
+    margin-bottom: 1rem;    
+}
+.counter p{
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+.icon-counter i{
+    font-size: 33px;
+    color: #ddd;
+}
+
+
+
