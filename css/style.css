@@ -251,22 +251,39 @@ section.section-1 {
     flex-direction: column;
     justify-content: space-between;
     direction: rtl;
-    padding: 100px 50px;
-    width: 80%;
+    padding: 50px 20px;
+    width: 100%;
     margin: auto;
-    gap: 40px;
+    gap: 30px;
+    line-height: 25px;
 }
 
 section.section-1 h1 {
-    font-size: 30px;
+    font-size: 22px;
 }
 
 section.section-1 ol li {
     font-size: 20px;
-    font-weight: 600;
-
+ 
 }
-
+@media(max-width: 768px){
+    section.section-1 {
+padding: 50px 30px;
+        width: 100%;
+        margin: auto;
+        line-height: 25px;
+    }
+    
+    section.section-1 h1 {
+        font-size: 22px;
+        
+    }
+    
+    section.section-1 ol li {
+        font-size: 20px;
+     
+    }
+}
 /* End Section-1 */
 hr {
     background-color: #000000;
@@ -347,6 +364,8 @@ form button {
     font-weight: 700;
     background: #000000;
     color: #ffffff;
+    cursor: pointer;
+
 }
 
 /* Start responseve Form */
