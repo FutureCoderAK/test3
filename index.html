@@ -16,19 +16,19 @@
 
 <body>
     <header>
-        <!-- <nav>
+        <nav>
             <ul>
                 <li><a href="#">اتصل بنا</a></li>
-                <li><a href="#">عضوية</a>
-                    <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">عضوية</a>
+                    <ul class="dropdown-content">
                         <li><a href="#">إنشاء عضوية</a></li>
                         <li><a href="#">مميزات العضوية</a></li>
                     </ul>
                 </li>
-                <li><a href="#">الرئيسية</a>
-                </li>
+                <li><a href="#">الرئيسية</a></li>
             </ul>
-        </nav> -->
+        </nav>
         <a href="#"><img class="logo" src="img/Picsart_24-09-21_02-31-01-090.png" alt="logo"></a>
     </header>
     <section class="slider">
@@ -155,39 +155,85 @@
             <h3>أكثر من 53 ألف موضوع مهني متخصص</h3>
         </article>
     </section>
+    <section class="section-1">
+        <h1>فوائد عضوية جمعية المحاسبين والمراجعين العرب: </h1>
+        <ol>
+            <li>تأهيل الأعضاء لبيئة عمل متطورة ومتغيره.</li>
+            <li>اطلاع الأعضاء على التغييرات المهنية أولا بأول.</li>
+            <li>تأهيل الأعضاء لتقييم وتطوير ذاتهم واعمالهم من خلال الدورات التدريبية التي تعقدها الجمعية.</li>
+            <li>تطوير الأعضاء وأعمالهم من خلال الاعتماد الكامل على أفضل الممارسات والتطبيقات التكنولوجية المهنية
+                المتخصصة.</li>
+            <li>تواصل الأعضاء والحصول على الاستشارات المالية من أكبر عدد من الخبراء المهنيين والاستشاريين وأساتذة
+                الجامعات.</li>
+        </ol>
+
+    </section>
+    <hr>
     <form action="">
-        <article class="side-left">
-            <img src="img/Picsart_24-09-21_02-31-01-090.png" alt="">
-        </article>
-        <article class="side-right">
-            <p class="create-id-1">
-                طلب إنشاء عضوية جمعية المحاسبين والمراجعين العرب
-            </p>
-            <p class="create-id-2">
-                طلب إنشاء عضوية
-            </p>
-            <!-- <article class="name-and-icon"> -->
-            <input class="name" type="text" placeholder="الأسم بالكامل" required>
-            <!-- <i class="icon-user"></i>
+        <p class="create-id-1">
+            طلب إنشاء عضوية جمعية المحاسبين والمراجعين العرب
+        </p>
+        <p class="create-id-2">
+            طلب إنشاء عضوية
+        </p>
+        <!-- <article class="name-and-icon"> -->
+        <input class="name" type="text" placeholder="الأسم بالكامل" required>
+        <!-- <i class="icon-user"></i>
             </article> -->
-            <!-- <article class="email-and-icon"> -->
-            <input class="email" type="email" placeholder="البريد الإلكتروني" name="" id="" required>
-            <!-- <i class="icon-email"></i>
+        <!-- <article class="email-and-icon"> -->
+        <input class="email" type="email" placeholder="البريد الإلكتروني" name="" id="" required>
+        <!-- <i class="icon-email"></i>
             </article> -->
-            <article class="id-and-phone-number">
-                <!-- <article class="id-and-icon"> -->
-                <input class="id" type="text" placeholder="الرقم القومي" required maxlength="14">
-                <!-- <i class="icon-id-card"></i>
+        <article class="id-and-phone-number">
+            <!-- <article class="id-and-icon"> -->
+            <input class="id" type="text" placeholder="الرقم القومي" required maxlength="14">
+            <!-- <i class="icon-id-card"></i>
                 </article> -->
-                <!-- <article class="phone-number-and-icon"> -->
-                <input class="phone-number" type="text" placeholder="رقم الموبايل" required maxlength="11">
-                <!-- <i class="icon-phone-1"></i>
+            <!-- <article class="phone-number-and-icon"> -->
+            <input class="phone-number" type="text" placeholder="رقم الموبايل" required maxlength="11">
+            <!-- <i class="icon-phone-1"></i>
                 </article> -->
-            </article>
-            <button type="submit">إرسال</button>
         </article>
+        <button type="submit">إرسال</button>
     </form>
- 
+    <!-- Start Footer -->
+    <footer>
+        <h3 id="contect-us">تواصل معنا</h3>
+        <article class="footer-top">
+            <article>
+                <a href="https://www.facebook.com/acc4arab.org?mibextid=ZbWKwL" target="_blank" class="facebook">
+                    <i class="icon-facebook-5"></i>
+                </a>
+            </article>
+            <article>
+                <a class="whatsapp" href="https://wa.me/201271090059" target="_blank">
+                    <i class="icon-whatsapp"></i>
+                </a>
+            </article>
+            <article>
+                <a class="gmail" href="mailto:info@acc4arab.org" target="_blank">
+                    <i class="icon-mail-8"></i>
+                </a>
+            </article>
+            <article>
+                <a>
+                    <i class="icon-phone-1"></i>
+                    +20 1271090059
+                </a>
+            </article>
+            <article>
+                <a href="https://www.acc4arab.com/" target="_blank">
+                    <img id="web" src="img/Acc4arab_logo.png" alt="">
+                    موقع المحاسبين والمراجعين العرب
+                </a>
+            </article>
+        </article>
+
+        <article class="footer-bottom">
+            <p>جميع الحقوق محفوظة</p>
+        </article>
+    </footer>
+    <!-- End Footeer -->
     <script src="main.js"></script>
 </body>
 
