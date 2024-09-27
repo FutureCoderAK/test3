@@ -69,7 +69,46 @@ counters.forEach((counter) => {
       incrementCount();
     }
   }
-
+// لعمل ال dropdown
   window.addEventListener('scroll', checkIfInView);
   checkIfInView(); // initial check
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownBtn = document.querySelector('.dropbtn');
+  const dropdownContent = document.querySelector('.dropdown-content');
+
+  dropdownBtn.addEventListener('click', function(event) {
+      event.preventDefault(); // لمنع الانتقال إلى الرابط
+      dropdownContent.classList.toggle('show'); // إضافة أو إزالة الكلاس "show"
+  });
+
+  // إغلاق القائمة المنسدلة عند النقر في أي مكان آخر في الصفحة
+  window.addEventListener('click', function(event) {
+      if (!event.target.matches('.dropbtn')) {
+          if (dropdownContent.classList.contains('show')) {
+              dropdownContent.classList.remove('show');
+          }
+      }
+  });
+});
+
+// scroll
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('.article-txt, .cards2, .counter-wrapper, .section-1, form');
+
+  function checkVisibility() {
+      const windowHeight = window.innerHeight;
+
+      sections.forEach(section => {
+          const sectionTop = section.getBoundingClientRect().top;
+
+          if (sectionTop < windowHeight - 50) { // 50px من الأسفل
+              section.classList.add('visible');
+          }
+      });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  checkVisibility(); // تأكد من تشغيله عند التحميل
+});
+
