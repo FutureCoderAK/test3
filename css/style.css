@@ -674,7 +674,7 @@ footer {
     gap: 20px;
     background-color: #16538a;
     border-radius: 60px 60px 0 0;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 footer article.footer-top {
@@ -779,5 +779,10 @@ footer article.footer-bottom {
 footer article.footer-bottom p {
     font-size: 17px;
 }
-
+@media(max-width: 447px){
+    footer article.footer-top{
+        align-items:center ;
+        justify-content: center;
+    }
+}
 /* End Footer */
