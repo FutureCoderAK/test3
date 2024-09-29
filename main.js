@@ -1,29 +1,40 @@
+// menu
+function toggleMenu() {
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('active');
+}
+
+function toggleDropdown(event) {
+  const dropdown = event.currentTarget;
+  dropdown.classList.toggle('active');
+}
+
 window.addEventListener("scroll", function () {
-    var header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 0);
+  var header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 0);
 })
 
 const navMenuItems = document.querySelectorAll('.nav-menu li');
 
 navMenuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        item.querySelector('ul').classList.toggle('show-submenu');
-    });
+  item.addEventListener('click', () => {
+    item.querySelector('ul').classList.toggle('show-submenu');
+  });
 });
 
-document.addEventListener("scroll", function() {
-    const paragraphs = document.querySelectorAll('.txt-head p');
-    const windowHeight = window.innerHeight;
-    
-    paragraphs.forEach((p) => {
-        const elementTop = p.getBoundingClientRect().top;
+document.addEventListener("scroll", function () {
+  const paragraphs = document.querySelectorAll('.txt-head p');
+  const windowHeight = window.innerHeight;
 
-        // تحقق إذا كانت الفقرة في نطاق العرض
-        if (elementTop < windowHeight && elementTop > 0) {
-            p.style.opacity = 1; // جعل النص مرئي
-            p.style.transform = 'translateY(0)'; // إعادة موضع النص
-        }
-    });
+  paragraphs.forEach((p) => {
+    const elementTop = p.getBoundingClientRect().top;
+
+    // تحقق إذا كانت الفقرة في نطاق العرض
+    if (elementTop < windowHeight && elementTop > 0) {
+      p.style.opacity = 1; // جعل النص مرئي
+      p.style.transform = 'translateY(0)'; // إعادة موضع النص
+    }
+  });
 });
 const counters = document.querySelectorAll('.counter');
 
@@ -61,7 +72,7 @@ counters.forEach((counter) => {
   function checkIfInView() {
     const rect = counter.getBoundingClientRect();
     const viewHeight = window.innerHeight;
-    const offset = 100; 
+    const offset = 100;
 
     if (rect.top <= viewHeight + offset && !animationStarted) {
       animationStarted = true;
@@ -69,46 +80,63 @@ counters.forEach((counter) => {
       incrementCount();
     }
   }
-// لعمل ال dropdown
+  // لعمل ال dropdown
   window.addEventListener('scroll', checkIfInView);
   checkIfInView(); // initial check
 });
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const dropdownBtn = document.querySelector('.dropbtn');
   const dropdownContent = document.querySelector('.dropdown-content');
 
-  dropdownBtn.addEventListener('click', function(event) {
-      event.preventDefault(); // لمنع الانتقال إلى الرابط
-      dropdownContent.classList.toggle('show'); // إضافة أو إزالة الكلاس "show"
+  dropdownBtn.addEventListener('click', function (event) {
+    event.preventDefault(); // لمنع الانتقال إلى الرابط
+    dropdownContent.classList.toggle('show'); // إضافة أو إزالة الكلاس "show"
   });
 
   // إغلاق القائمة المنسدلة عند النقر في أي مكان آخر في الصفحة
-  window.addEventListener('click', function(event) {
-      if (!event.target.matches('.dropbtn')) {
-          if (dropdownContent.classList.contains('show')) {
-              dropdownContent.classList.remove('show');
-          }
+  window.addEventListener('click', function (event) {
+    if (!event.target.matches('.dropbtn')) {
+      if (dropdownContent.classList.contains('show')) {
+        dropdownContent.classList.remove('show');
       }
+    }
   });
 });
 
 // scroll
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('.article-txt, .cards2, .counter-wrapper, .section-1, form');
 
   function checkVisibility() {
-      const windowHeight = window.innerHeight;
+    const windowHeight = window.innerHeight;
 
-      sections.forEach(section => {
-          const sectionTop = section.getBoundingClientRect().top;
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
 
-          if (sectionTop < windowHeight - 50) { // 50px من الأسفل
-              section.classList.add('visible');
-          }
-      });
+      if (sectionTop < windowHeight - 50) { // 50px من الأسفل
+        section.classList.add('visible');
+      }
+    });
   }
 
   window.addEventListener('scroll', checkVisibility);
   checkVisibility(); // تأكد من تشغيله عند التحميل
 });
 
+// Start
+   // إظهار الزر عند النزول للأسفل
+   window.onscroll = function () {
+    var scrollBtn = document.getElementById("scrollBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+};
+
+// وظيفة الانتقال إلى الأعلى
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+// End
