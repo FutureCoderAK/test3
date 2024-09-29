@@ -10,10 +10,24 @@
     -o-transition: 0.2s linear;
 }
 
+/* إخفاء شريط التمرير في Chrome, Safari, و Edge */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* إخفاء شريط التمرير في Firefox */
+html {
+    scrollbar-width: none;
+    /* إخفاء التمرير */
+}
+
 body {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    /* إخفاء شريط التمرير في Internet Explorer و Edge Legacy */
+    -ms-overflow-style: none;
+    /* إخفاء التمرير */
 }
 
 body::before {
@@ -241,6 +255,44 @@ header img {
 
 /* End Section */
 
+/* Start */
+
+#scrollBtn {
+    display: none;
+    /* زر مخفي بشكل افتراضي */
+    position: fixed;
+    /* يظل في نفس المكان حتى عند التمرير */
+    bottom: 20px;
+    /* المسافة من الأسفل */
+    right: 30px;
+    /* المسافة من اليمين */
+    z-index: 99;
+    /* وضع الزر فوق كل العناصر الأخرى */
+    border: none;
+    /* بدون حدود */
+    outline: none;
+    /* بدون تأثيرات حول الزر */
+    background-color: #000000;
+    /* لون الخلفية */
+    color: rgb(255, 255, 255);
+    /* لون النص */
+    cursor: pointer;
+    /* شكل المؤشر عند التمرير */
+    padding: 15px;
+    /* حجم الزر */
+    border-radius: 10px;
+    /* زوايا دائرية */
+    font-size: 18px;
+    /* حجم النص */
+}
+
+#scrollBtn:hover {
+    background-color: #333;
+    /* لون الخلفية عند التمرير على الزر */
+}
+
+/* End */
+
 /* Start Section-1 */
 
 section.section-1 {
@@ -257,7 +309,7 @@ section.section-1 {
     line-height: 25px;
 }
 
-section.section-1 h1 {  
+section.section-1 h1 {
     font-size: 22px;
 }
 
@@ -265,9 +317,11 @@ section.section-1 ol li {
     font-size: 20px;
 
 }
-.h1-2{
+
+.h1-2 {
     display: none;
 }
+
 @media(max-width: 768px) {
     section.section-1 {
         padding: 50px 30px;
@@ -285,11 +339,13 @@ section.section-1 ol li {
         font-size: 20px;
 
     }
-    @media(max-width: 426px){
-        .h1-1{
+
+    @media(max-width: 426px) {
+        .h1-1 {
             display: none;
         }
-        .h1-2{
+
+        .h1-2 {
             display: block;
         }
     }
@@ -647,6 +703,14 @@ section.counter-wrapper {
     color: #ddd;
 }
 
+.icon-counter i.icon-eye {
+    color: #ffffff;
+}
+
+.icon-counter i.icon-globe-4 {
+    color: #83ac2d;
+}
+
 .article-txt,
 .cards2,
 .counter-wrapper,
@@ -781,7 +845,9 @@ footer a.phone-number:hover i.icon-phone-1 {
     color: #ffffff;
     background-color: #52bc00;
 }
-a.phone-number,.logo-footer{
+
+a.phone-number,
+.logo-footer {
     width: 200px;
     margin-top: 23px;
 }
@@ -806,15 +872,19 @@ footer article.footer-bottom p {
         align-items: center;
         justify-content: center;
     }
-    a.phone-number,.logo-footer{
+
+    a.phone-number,
+    .logo-footer {
         width: 200px;
         margin-top: 0px;
     }
+
     footer article.footer-bottom {
         background: #fbcc1d;
         width: 100%;
         padding: 10px;
     }
+
     footer h3 {
         padding-bottom: 0px;
     }
