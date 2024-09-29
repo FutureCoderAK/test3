@@ -40,7 +40,6 @@ header {
     z-index: 100000;
 }
 
-
 header.sticky {
     padding: 10px 100px;
     background-color: rgb(0, 0, 0);
@@ -258,33 +257,46 @@ section.section-1 {
     line-height: 25px;
 }
 
-section.section-1 h1 {
+section.section-1 h1 {  
     font-size: 22px;
 }
 
 section.section-1 ol li {
     font-size: 20px;
- 
+
 }
-@media(max-width: 768px){
+.h1-2{
+    display: none;
+}
+@media(max-width: 768px) {
     section.section-1 {
-padding: 50px 30px;
+        padding: 50px 30px;
         width: 100%;
         margin: auto;
         line-height: 25px;
     }
-    
+
     section.section-1 h1 {
         font-size: 22px;
-        
+
     }
-    
+
     section.section-1 ol li {
         font-size: 20px;
-     
+
+    }
+    @media(max-width: 426px){
+        .h1-1{
+            display: none;
+        }
+        .h1-2{
+            display: block;
+        }
     }
 }
+
 /* End Section-1 */
+
 hr {
     background-color: #000000;
     height: 3px;
@@ -303,7 +315,7 @@ form {
     flex-direction: column;
     gap: 15px;
     border-radius: 12px;
-    padding: 10px 5px 10px 0;
+    padding: 3px 5px 10px 0;
     background: #ffffff;
     margin: auto;
     margin-top: 50px;
@@ -326,7 +338,7 @@ form input.name,
 .id,
 .phone-number {
     width: 90%;
-    padding: 10px;
+    padding: 13px;
     font-size: 15px;
     font-weight: 600;
     text-align: right;
@@ -350,13 +362,13 @@ form article.id-and-phone-number {
 form article.id-and-phone-number input.id,
 .phone-number {
     width: 50%;
-    padding: 10px;
+    padding: 13px;
     outline: none;
 }
 
 form button {
-    width: 25%;
-    padding: 10px;
+    width: 170px;
+    padding: 15px;
     outline: none;
     margin-top: 15px;
     border-radius: 8px;
@@ -369,6 +381,7 @@ form button {
 }
 
 /* Start responseve Form */
+
 @media(max-width: 1274px) {
     form {
         width: 65%;
@@ -494,9 +507,6 @@ section.article-txt .txt-head {
     transition: opacity 0.8s ease, transform 0.5s ease;
 }
 
-
-
-
 section.cards2 {
     display: flex;
     flex-direction: row-reverse;
@@ -586,8 +596,6 @@ section.cards2 .resaltna {
     
 } */
 
-
-
 section.counter-wrapper {
     background-color: #115085;
     background-repeat: no-repeat;
@@ -661,9 +669,6 @@ form {
 
 /* start Footer */
 
-
-
-
 footer {
     display: flex;
     align-items: center;
@@ -689,7 +694,7 @@ footer article.footer-top {
 }
 
 footer article.footer-top article {
-    width: 180px;
+    width: 200px;
     margin: 10px;
 }
 
@@ -733,38 +738,52 @@ footer article a i {
     background-color: #16538a;
 }
 
-footer article a i.icon-mail-8 {
-    padding-right: 7px;
-}
-
-footer .icon-whatsapp {
+footer a i.icon-whatsapp {
     color: #0ec641;
     background-color: #ffffff;
 }
 
-footer .whatsapp:hover .icon-whatsapp {
+footer a.whatsapp:hover i.icon-whatsapp {
     color: #ffffff;
     background-color: #0ec641;
 }
 
-footer .icon-facebook-5 {
+footer a i.icon-facebook-5 {
     color: #0c64fc;
     background-color: #ffffff;
 }
 
-footer .facebook:hover .icon-facebook-5 {
+footer a.facebook:hover i.icon-facebook-5 {
     color: #ffffff;
     background-color: #0c64fc;
 }
 
-footer .icon-mail-8 {
+footer article a i.icon-mail-8 {
+    padding-right: 7px;
+}
+
+footer a i.icon-mail-8 {
     color: #dd4b3e;
     background-color: #ffffff;
 }
 
-footer a.gmail:hover .icon-mail-8 {
-    color: #ffffff;
+footer a.gmail:hover i.icon-mail-8 {
+    color: white;
     background-color: #000000;
+}
+
+footer a i.icon-phone-1 {
+    color: #0854ca;
+    background-color: #ffffff;
+}
+
+footer a.phone-number:hover i.icon-phone-1 {
+    color: #ffffff;
+    background-color: #52bc00;
+}
+a.phone-number,.logo-footer{
+    width: 200px;
+    margin-top: 23px;
 }
 
 footer article.footer-bottom {
@@ -779,10 +798,26 @@ footer article.footer-bottom {
 footer article.footer-bottom p {
     font-size: 17px;
 }
-@media(max-width: 447px){
-    footer article.footer-top{
-        align-items:center ;
+
+@media(max-width: 489px) {
+
+    footer article.footer-top {
+        display: flex;
+        align-items: center;
         justify-content: center;
     }
+    a.phone-number,.logo-footer{
+        width: 200px;
+        margin-top: 0px;
+    }
+    footer article.footer-bottom {
+        background: #fbcc1d;
+        width: 100%;
+        padding: 10px;
+    }
+    footer h3 {
+        padding-bottom: 0px;
+    }
 }
+
 /* End Footer */
