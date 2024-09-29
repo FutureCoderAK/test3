@@ -245,12 +245,12 @@ header img {
     color: rgb(255, 255, 255);
 }
 
-.slider .slide .content.p {
+.slider .slide .content p.p1 {
     margin: 10px 0 0;
     padding: 10px;
     font-size: 18px;
     width: 50%;
-    color: rgb(255, 255, 255);
+    color: rgb(207, 201, 201);
 }
 
 /* End Section */
@@ -291,6 +291,12 @@ header img {
     /* لون الخلفية عند التمرير على الزر */
 }
 
+@media(max-width: 425px) {
+    #scrollBtn {
+        right: 10px;
+    }
+}
+
 /* End */
 
 /* Start Section-1 */
@@ -313,9 +319,15 @@ section.section-1 h1 {
     font-size: 22px;
 }
 
+section.section-1 ol {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
 section.section-1 ol li {
     font-size: 20px;
-
+    color: rgb(63, 62, 62);
 }
 
 .h1-2 {
@@ -372,7 +384,6 @@ form {
     gap: 15px;
     border-radius: 12px;
     padding: 3px 5px 10px 0;
-    background: #ffffff;
     margin: auto;
     margin-top: 50px;
 }
@@ -604,6 +615,11 @@ section.cards2 .resaltna {
     position: relative;
     padding: 10px;
     /* overflow: hidden; */
+}
+
+section.cards2 .roqiatna h3,
+.resaltna h3 {
+    text-align: center;
 }
 
 .resaltna::before,
