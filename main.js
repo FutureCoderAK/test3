@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // scroll
 document.addEventListener('DOMContentLoaded', function () {
-  const sections = document.querySelectorAll('.article-txt, .cards2, .counter-wrapper, .section-1, form');
+  const sections = document.querySelectorAll('.article-txt, .txt-head, .cards2, .roqiatna, .resaltna, .counter-wrapper, .counter, .section-1, form');
 
   function checkVisibility() {
     const windowHeight = window.innerHeight;
