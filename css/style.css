@@ -69,7 +69,11 @@ header nav.screen-big {
     position: relative;
     margin: auto;
 }
-
+@media(max-width: 920px) and (min-width: 769px){
+    header nav.screen-big {
+        width: 65%;
+    }
+}
 header nav.screen-big ul {
     width: 100%;
     display: flex;
@@ -874,8 +878,12 @@ section.counter-wrapper {
 
 
 .article-txt,
+.txt-head,
 .cards2,
+.roqiatna,
+.resaltna,
 .counter-wrapper,
+.counter,
 .section-1,
 form {
     opacity: 0;
