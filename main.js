@@ -22,6 +22,24 @@ navMenuItems.forEach(item => {
   });
 });
 
+// Start
+// إظهار الزر عند النزول للأسفل
+window.onscroll = function () {
+  var scrollBtn = document.getElementById("scrollBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    scrollBtn.style.display = "block";
+  } else {
+    scrollBtn.style.display = "none";
+  }
+};
+
+// وظيفة الانتقال إلى الأعلى
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+// End
+
 document.addEventListener("scroll", function () {
   const paragraphs = document.querySelectorAll('.txt-head p');
   const windowHeight = window.innerHeight;
@@ -123,20 +141,19 @@ document.addEventListener('DOMContentLoaded', function () {
   checkVisibility(); // تأكد من تشغيله عند التحميل
 });
 
-// Start
-   // إظهار الزر عند النزول للأسفل
-   window.onscroll = function () {
-    var scrollBtn = document.getElementById("scrollBtn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollBtn.style.display = "block";
-    } else {
-        scrollBtn.style.display = "none";
-    }
-};
 
-// وظيفة الانتقال إلى الأعلى
-function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-// End
+
+let navVisible = false;
+
+document.querySelector('.row').addEventListener('click', function() {
+  if (!navVisible) {
+    document.querySelector('.screen-small').classList.add('animate');
+    navVisible = true;
+  } else {
+    document.querySelector('.screen-small').classList.add('animate-hide');
+    setTimeout(function() {
+      document.querySelector('.screen-small').classList.remove('animate', 'animate-hide');
+      navVisible = false;
+    }, 1000);
+  }
+});
