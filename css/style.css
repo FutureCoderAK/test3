@@ -180,6 +180,10 @@ header nav.screen-small {
 }
 
 @media screen and (max-width :768px) {
+    header.sticky {
+        display: none;
+    }
+
     nav.screen-big ul.screen-big-none {
         display: none;
     }
@@ -196,13 +200,15 @@ header nav.screen-small {
         display: flex;
         flex-direction: column;
         position: absolute;
-        width: 320px;
+        width: 309px;
+        height: 100vh;
         box-sizing: border-box;
-        background: red;
-        top: 41px;
+        background: rgb(255, 255, 255);
+        top: 73px;
         left: 0;
         align-items: center;
         padding: 14px;
+
     }
 
     article.logoAboutUs {
@@ -213,8 +219,9 @@ header nav.screen-small {
     }
 
     img.logo-screen-small {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
+
 
     }
 
@@ -223,7 +230,9 @@ header nav.screen-small {
         gap: 10px;
         flex-direction: column-reverse;
         align-items: center;
-        font-size: 19px
+        font-size: 19px;
+        list-style: none;
+
     }
 
     .screen-small {
@@ -262,15 +271,28 @@ header nav.screen-small {
         width: 100%;
         border-bottom: #eee 1px solid;
         text-align: end;
-        padding: 2px;
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
     }
 
     nav article p {
         border-bottom: #eee 1px solid;
         padding: 3px;
+        text-align: center;
     }
 }
-
+@media(max-width: 320px){
+    nav.screen-small {
+        width: 100%;
+    }
+}
 /* End Header */
 
 /* Stert Section */
@@ -807,7 +829,7 @@ section.counter-wrapper {
     display: flex;
     flex-wrap: wrap;
     padding: 10px 9%;
-    margin-top: 5px;
+    margin-top: 50px;
     position: relative;
     justify-content: space-around;
     gap: 10px;
@@ -849,13 +871,7 @@ section.counter-wrapper {
     color: #ddd;
 }
 
-.icon-counter i.icon-eye {
-    color: #ffffff;
-}
 
-.icon-counter i.icon-globe-4 {
-    color: #83ac2d;
-}
 
 .article-txt,
 .cards2,
@@ -878,9 +894,10 @@ form {
 }
 
 /* start Footer */
-.footer-distributed{
+.footer-distributed {
     width: 100%;
 }
+
 .footer-top {
     background: #666;
     background: linear-gradient(to right, #115085, rgb(110, 107, 107));
@@ -971,7 +988,7 @@ form {
     vertical-align: middle;
 }
 
-.footer-top .footer-center i.icon-mail{
+.footer-top .footer-center i.icon-mail {
     font-size: 20px;
     line-height: 38px;
     padding: 5px;
@@ -1054,22 +1071,23 @@ pre a {
     margin-bottom: 5px;
 }
 
-.footer-bottom{
+.footer-bottom {
     background-color: #fbcb1f;
     width: 100%;
     display: flex;
     align-items: center;
-   justify-content: center;
-   padding: 10px;
-   text-align: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
 }
+
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
 
     .footer-top {
         font: bold 14px sans-serif;
-       padding: 10px;
+        padding: 10px;
     }
 
     .footer-top .footer-left,
@@ -1083,7 +1101,7 @@ pre a {
 
     .footer-distributed .footer-center i {
         margin-left: 0;
-    } 
+    }
 
 }
 
@@ -1097,9 +1115,9 @@ pre a {
 
     .footer-left a.footer-company-name {
         width: 100%;
-       display: flex;
-       align-items: center;
-       justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
     }
 
@@ -1110,5 +1128,50 @@ pre a {
         }
     }
 }
+
+/* 
+footer article.social-media-icons i.icon-gmail {
+    color: #dd4b3e;
+    background-color: #ffffff;
+}
+
+footer article.social-media-icons i.icon-gmail:hover {
+    color: white;
+    background-color: #000000;
+}
+
+footer article.social-media-icons i.icon-whatsapp {
+    color: #0ec641;
+    background-color: #ffffff;
+}
+
+footer article.social-media-icons i.icon-whatsapp:hover {
+    color: #ffffff;
+    background-color: #0ec641;
+}
+
+footer article.social-media-icons i.icon-call {
+    color: #0854ca;
+    background-color: #ffffff;
+    width: 115px;
+    font-size: 15px;
+    font-weight: 500;
+    gap: 15px;
+}
+
+footer article.social-media-icons i.icon-call:hover {
+    color: #ffffff;
+    background-color: #52bc00;
+}
+
+footer article.facebook i.icon-facebook {
+    color: #0c64fc;
+    background-color: #ffffff;
+}
+
+footer article.facebook i.icon-facebook:hover {
+    color: #ffffff;
+    background-color: #0c64fc;
+} */
 
 /* End Footer */
