@@ -141,8 +141,6 @@ document.addEventListener('DOMContentLoaded', function () {
   checkVisibility(); // تأكد من تشغيله عند التحميل
 });
 
-
-
 let navVisible = false;
 
 document.querySelector('.row').addEventListener('click', function() {
