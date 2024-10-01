@@ -59,7 +59,7 @@ header.sticky {
     background-color: rgb(0, 0, 0);
 }
 
-header nav {
+header nav.screen-big {
     width: 50%;
     display: flex;
     align-items: center;
@@ -70,7 +70,7 @@ header nav {
     margin: auto;
 }
 
-header nav ul {
+header nav.screen-big ul {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -78,13 +78,13 @@ header nav ul {
     position: relative;
 }
 
-header nav ul li {
+header nav.screen-big ul li {
     list-style: none;
     position: relative;
     display: inline-block;
 }
 
-header nav ul li a {
+header nav.screen-big ul li a {
     color: white;
     font-size: 20px;
     font-weight: 600;
@@ -95,7 +95,7 @@ header nav ul li a {
 }
 
 /* Dropdown Styles */
-nav ul li ul {
+nav.screen-big ul li ul {
     display: none;
     /* إخفاء القائمة المنسدلة بشكل افتراضي */
     position: absolute;
@@ -111,12 +111,12 @@ nav ul li ul {
     border-radius: 0 0 12px 12px;
 }
 
-nav ul li ul li {
+nav.screen-big ul li ul li {
     width: 100%;
     /* جعل عناصر القائمة المنسدلة تأخذ العرض الكامل */
 }
 
-nav ul li ul li a {
+nav.screen-big ul li ul li a {
     color: black;
     /* لون النص داخل القائمة المنسدلة */
     padding: 12px 16px;
@@ -125,20 +125,150 @@ nav ul li ul li a {
     /* جعل العناصر تأخذ مساحة كاملة */
 }
 
-nav ul li ul li a:hover {
+nav.screen-big ul li ul li a:hover {
     background-color: #f1f1f1;
     /* تغيير لون الخلفية عند التمرير فوق العنصر */
 }
 
-nav ul li ul.show {
+nav.screen-big ul li ul.show {
     display: block;
     /* تظهر القائمة المنسدلة عند النقر */
 }
 
-header img {
+header img.logo {
     width: 60px;
     position: relative;
     transition: 0.6s;
+}
+
+.row {
+    width: 35px;
+    height: 21px;
+    position: relative;
+}
+
+span.line1 {
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    background: #eee;
+    top: 0;
+}
+
+span.line2 {
+    position: absolute;
+    height: 2px;
+    width: 39px;
+    background: #eee;
+    bottom: 11px;
+}
+
+.line3 {
+    position: absolute;
+    height: 2px;
+    width: 50px;
+    background: #eee;
+    bottom: 4px;
+}
+
+header article.row {
+    display: none;
+}
+
+header nav.screen-small {
+    display: none;
+}
+
+@media screen and (max-width :768px) {
+    nav.screen-big ul.screen-big-none {
+        display: none;
+    }
+
+    header nav.screen-small {
+        display: block;
+    }
+
+    header article.row {
+        display: block;
+    }
+
+    nav.screen-small {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 320px;
+        box-sizing: border-box;
+        background: red;
+        top: 41px;
+        left: 0;
+        align-items: center;
+        padding: 14px;
+    }
+
+    article.logoAboutUs {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img.logo-screen-small {
+        width: 200px;
+        height: 200px;
+
+    }
+
+    nav.screen-small ul {
+        display: flex;
+        gap: 10px;
+        flex-direction: column-reverse;
+        align-items: center;
+        font-size: 19px
+    }
+
+    .screen-small {
+        transform: translateX(-100%);
+    }
+
+    .screen-small.animate {
+        animation: appear-from-left 1s forwards;
+    }
+
+    .screen-small.animate-hide {
+        animation: hide-from-left 1s forwards;
+    }
+
+    @keyframes appear-from-left {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes hide-from-left {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    ul li {
+        width: 100%;
+        border-bottom: #eee 1px solid;
+        text-align: end;
+        padding: 2px;
+    }
+
+    nav article p {
+        border-bottom: #eee 1px solid;
+        padding: 3px;
+    }
 }
 
 /* End Header */
@@ -748,162 +878,281 @@ form {
 }
 
 /* start Footer */
-
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 50px;
+.footer-distributed{
     width: 100%;
-    gap: 20px;
-    background-color: #16538a;
-    border-radius: 60px 60px 0 0;
-    padding-top: 10px;
+}
+.footer-top {
+    background: #666;
+    background: linear-gradient(to right, #115085, rgb(110, 107, 107));
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+    direction: rtl;
+    border-top-right-radius: 100px;
 }
 
-footer article.footer-top {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #16538a;
-    width: 90%;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
+.footer-top .footer-left,
+.footer-top .footer-center,
+.footer-top .footer-right {
+    display: inline-block;
+    vertical-align: top;
 }
 
-footer article.footer-top article {
-    width: 200px;
-    margin: 10px;
+/* Footer left */
+
+.footer-top .footer-left {
+    width: 40%;
 }
 
-footer h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    padding-bottom: 50px;
-    color: #ffffff;
-}
-
-footer img {
+.footer-left img {
     width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    border: #16538a solid 5px;
-    box-shadow: 0 0px 10px #000000f8;
 }
 
-footer article.footer-top a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+/* The company logo */
+
+.footer-top h3 {
     color: #ffffff;
+    font: normal 36px 'Open Sans', cursive;
+    margin: 0;
+}
+
+/* Footer links */
+
+.footer-top .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-top .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    font-weight: 400;
     text-decoration: none;
-    font-size: 16px;
+    color: inherit;
 }
 
-footer article a i {
+.footer-top .footer-company-name {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    gap: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
+}
+
+.footer-top .footer-company-name img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+/* Footer Center */
+
+.footer-top .footer-center {
+    width: 35%;
+    direction: ltr;
+}
+
+.footer-top .footer-center i {
+    background-color: #000000;
+    color: #ffffff;
     font-size: 20px;
-    box-shadow: 0 0px 10px #000000f8;
-    background-color: #16538a;
+    padding: 5px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
 }
 
-footer a i.icon-whatsapp {
-    color: #0ec641;
-    background-color: #ffffff;
+.footer-top .footer-center i.icon-mail{
+    font-size: 20px;
+    line-height: 38px;
+    padding: 5px;
 }
 
-footer a.whatsapp:hover i.icon-whatsapp {
+.footer-top .footer-center p,
+pre {
+    display: inline-block;
     color: #ffffff;
-    background-color: #0ec641;
+    font-weight: 400;
+    vertical-align: middle;
+    margin: 0;
 }
 
-footer a i.icon-facebook-5 {
-    color: #0c64fc;
-    background-color: #ffffff;
+.footer-top .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
 }
 
-footer a.facebook:hover i.icon-facebook-5 {
+.footer-top .footer-center p a,
+pre a {
+    color: #fbcb1f;
+    text-decoration: none;
+}
+
+.footer-top .footer-links a:before {
+    content: "|";
+    font-weight: 300;
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.footer-top .footer-links .link-1:before {
+    content: none;
+}
+
+/* Footer Right */
+
+.footer-top .footer-right {
+    width: 20%;
+}
+
+.footer-top .footer-company-about {
+    line-height: 20px;
     color: #ffffff;
-    background-color: #0c64fc;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
 }
 
-footer article a i.icon-mail-8 {
-    padding-right: 7px;
+.footer-top .footer-company-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-footer a i.icon-mail-8 {
+.footer-top .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-top .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #000000;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.footer-bottom{
+    background-color: #fbcb1f;
+    width: 100%;
+    display: flex;
+    align-items: center;
+   justify-content: center;
+   padding: 10px;
+   text-align: center;
+}
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+    .footer-top {
+        font: bold 14px sans-serif;
+       padding: 10px;
+    }
+
+    .footer-top .footer-left,
+    .footer-top .footer-center,
+    .footer-top .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    } 
+
+}
+
+@media(max-width: 894px) {
+
+    .footer-left img.logo-footer {
+
+        margin: auto;
+
+    }
+
+    .footer-left a.footer-company-name {
+        width: 100%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+
+    }
+
+    @media(max-width: 292px) {
+        .footer-left a.footer-company-name {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+/* 
+footer article.social-media-icons i.icon-gmail {
     color: #dd4b3e;
     background-color: #ffffff;
 }
 
-footer a.gmail:hover i.icon-mail-8 {
+footer article.social-media-icons i.icon-gmail:hover {
     color: white;
     background-color: #000000;
 }
 
-footer a i.icon-phone-1 {
-    color: #0854ca;
+footer article.social-media-icons i.icon-whatsapp {
+    color: #0ec641;
     background-color: #ffffff;
 }
 
-footer a.phone-number:hover i.icon-phone-1 {
+footer article.social-media-icons i.icon-whatsapp:hover {
+    color: #ffffff;
+    background-color: #0ec641;
+}
+
+footer article.social-media-icons i.icon-call {
+    color: #0854ca;
+    background-color: #ffffff;
+    width: 115px;
+    font-size: 15px;
+    font-weight: 500;
+    gap: 15px;
+}
+
+footer article.social-media-icons i.icon-call:hover {
     color: #ffffff;
     background-color: #52bc00;
 }
 
-a.phone-number,
-.logo-footer {
-    width: 200px;
-    margin-top: 23px;
+footer article.facebook i.icon-facebook {
+    color: #0c64fc;
+    background-color: #ffffff;
 }
 
-footer article.footer-bottom {
-    background: #fbcc1d;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-footer article.footer-bottom p {
-    font-size: 17px;
-}
-
-@media(max-width: 489px) {
-
-    footer article.footer-top {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    a.phone-number,
-    .logo-footer {
-        width: 200px;
-        margin-top: 0px;
-    }
-
-    footer article.footer-bottom {
-        background: #fbcc1d;
-        width: 100%;
-        padding: 10px;
-    }
-
-    footer h3 {
-        padding-bottom: 0px;
-    }
-}
+footer article.facebook i.icon-facebook:hover {
+    color: #ffffff;
+    background-color: #0c64fc;
+} */
 
 /* End Footer */
