@@ -154,6 +154,6 @@ document.querySelector('.row').addEventListener('click', function() {
     setTimeout(function() {
       document.querySelector('.screen-small').classList.remove('animate', 'animate-hide');
       navVisible = false;
-    }, 1000);
+    },1000);
   }
 });
