@@ -8,6 +8,8 @@
     -moz-transition: 0.2s linear;
     -ms-transition: 0.2s linear;
     -o-transition: 0.2s linear;
+    font-family: 'Tajawal', sans-serif;
+    text-decoration: none;
 }
 
 /* إخفاء شريط التمرير في Chrome, Safari, و Edge */
@@ -69,11 +71,13 @@ header nav.screen-big {
     position: relative;
     margin: auto;
 }
-@media(max-width: 920px) and (min-width: 769px){
+
+@media(max-width: 920px) and (min-width: 769px) {
     header nav.screen-big {
         width: 65%;
     }
 }
+
 header nav.screen-big ul {
     width: 100%;
     display: flex;
@@ -90,7 +94,7 @@ header nav.screen-big ul li {
 
 header nav.screen-big ul li a {
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     text-decoration: none;
     position: relative;
@@ -292,11 +296,13 @@ header nav.screen-small {
         text-align: center;
     }
 }
-@media(max-width: 320px){
+
+@media(max-width: 320px) {
     nav.screen-small {
         width: 100%;
     }
 }
+
 /* End Header */
 
 /* Stert Section */
@@ -409,6 +415,85 @@ header nav.screen-small {
     color: rgb(207, 201, 201);
 }
 
+/*Start Arrow-Button */
+
+.arrows {
+    width: 60px;
+    height: 72px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 20px;
+}
+
+.arrows path {
+    stroke: #0dafcc;
+
+    fill: transparent;
+    stroke-width: 2px;
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 0
+    }
+
+    40% {
+        opacity: 1
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes arrow
+
+/*Safari and Chrome*/
+    {
+    0% {
+        opacity: 0
+    }
+
+    40% {
+        opacity: 1
+    }
+
+    80% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.arrows path.a1 {
+    animation-delay: -1s;
+    -webkit-animation-delay: -1s;
+    /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+    animation-delay: -0.5s;
+    -webkit-animation-delay: -0.5s;
+    /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s;
+    /* Safari 和 Chrome */
+}
+
+/*End Arrow-Button */
+
 /* End Section */
 
 /* Start */
@@ -475,37 +560,35 @@ section.section-1 h1 {
     font-size: 22px;
 }
 
-section.section-1 ol {
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-section.section-1 ol li {
-    font-size: 20px;
-    color: rgb(63, 62, 62);
-}
-
 .h1-2 {
     display: none;
 }
 
+/* فوائد العضوية */
+.benefits {
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.benefit {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 0s ease;
+    /* لا يوجد تأثير تدريجي */
+}
+
 @media(max-width: 768px) {
-    section.section-1 {
-        padding: 50px 30px;
-        width: 100%;
-        margin: auto;
-        line-height: 25px;
-    }
 
     section.section-1 h1 {
         font-size: 22px;
-
-    }
-
-    section.section-1 ol li {
-        font-size: 20px;
-
     }
 
     @media(max-width: 426px) {
@@ -518,7 +601,13 @@ section.section-1 ol li {
         }
     }
 }
+@media(max-width: 530px){
+    section.section-1 h1 {
+        font-size: 18px;
 
+    }
+
+}
 /* End Section-1 */
 
 hr {
@@ -591,7 +680,7 @@ form article.id-and-phone-number input.id,
 
 form button {
     width: 170px;
-    padding: 15px;
+    padding: 10px;
     outline: none;
     margin-top: 15px;
     border-radius: 8px;
@@ -600,7 +689,6 @@ form button {
     background: #000000;
     color: #ffffff;
     cursor: pointer;
-
 }
 
 /* Start responseve Form */
@@ -637,7 +725,11 @@ form button {
         width: 70%;
         padding: 10px;
     }
+    form p.create-id-1,form p.create-id-2 {
+     font-size: 14px;
+    }
 
+    }
     form p {
         font-size: 20px;
     }
@@ -697,6 +789,8 @@ form button {
 
 /* End Form */
 
+/* Start Goals */
+
 section.article-txt {
     width: 100%;
     margin-top: 50px;
@@ -711,14 +805,18 @@ section.article-txt .txt-head {
     margin: auto;
     align-items: center;
     padding: 10px;
-    color: white;
+    color: #eee;
 }
 
 .txt-head p {
     font-size: 28px;
     font-weight: 500;
 }
-
+@media(max-width: 352px){
+    .txt-head p{
+        font-size: 20px;
+    }
+}
 .txt-head {
     overflow: hidden;
 }
@@ -778,6 +876,11 @@ section.cards2 .roqiatna h3,
     text-align: center;
 }
 
+.roqiatna:hover,
+.resaltna:hover {
+    color: #eee;
+}
+
 .resaltna::before,
 .roqiatna::before {
     content: '';
@@ -794,13 +897,11 @@ section.cards2 .roqiatna h3,
 .roqiatna::before {
     top: 0;
     border-radius: 0 0 20% 20%;
-
 }
 
 .resaltna:hover::before,
 .roqiatna:hover::before {
     height: 100%;
-
 }
 
 @media screen and (max-width: 723px) {
@@ -901,13 +1002,14 @@ form {
     /* العودة لمكانه الأصلي */
 }
 
+/* End Goals */
+
 /* start Footer */
 .footer-distributed {
     width: 100%;
 }
 
 .footer-top {
-    background: #666;
     background: linear-gradient(to right, #115085, rgb(110, 107, 107));
     box-sizing: border-box;
     width: 100%;
@@ -1005,7 +1107,7 @@ form {
 .footer-top .footer-center p,
 pre {
     display: inline-block;
-    color: #ffffff;
+    color: #fbcb1f;
     font-weight: 400;
     vertical-align: middle;
     margin: 0;
@@ -1088,8 +1190,6 @@ pre a {
     padding: 10px;
     text-align: center;
 }
-
-/* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 880px) {
 
