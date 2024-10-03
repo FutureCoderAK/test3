@@ -143,15 +143,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let navVisible = false;
 
-document.querySelector('.row').addEventListener('click', function() {
+document.querySelector('.row').addEventListener('click', function () {
   if (!navVisible) {
     document.querySelector('.screen-small').classList.add('animate');
     navVisible = true;
   } else {
     document.querySelector('.screen-small').classList.add('animate-hide');
-    setTimeout(function() {
+    setTimeout(function () {
       document.querySelector('.screen-small').classList.remove('animate', 'animate-hide');
       navVisible = false;
-    },1000);
-  }
+    }, 1000);
+  }
 });
+// Start
+// دا الانيميشن بتاع فقرات فوائد العضوية
+const benefits = document.querySelectorAll('.benefit');
+let delay = 1500; // التأخير بين كل فقرة (1.5 ثانية)
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      benefits.forEach((benefit, index) => {
+        setTimeout(() => {
+          benefit.classList.add('visible');
+        }, delay * index);
+      });
+      observer.disconnect(); // إيقاف المراقبة بعد التفعيل
+    }
+  });
+});
+
+observer.observe(document.getElementById('benefits'));
+// End
