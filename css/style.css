@@ -114,7 +114,7 @@ nav.screen-big ul li ul {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    margin-top: 25px;
+    margin-top: 27px;
     width: 200px;
     border-radius: 0 0 12px 12px;
 }
@@ -131,6 +131,7 @@ nav.screen-big ul li ul li a {
     /* مساحة حول النص */
     display: block;
     /* جعل العناصر تأخذ مساحة كاملة */
+
 }
 
 nav.screen-big ul li ul li a:hover {
@@ -212,7 +213,7 @@ header nav.screen-small {
         height: 100vh;
         box-sizing: border-box;
         background: rgb(255, 255, 255);
-        top: 73px;
+        top: 75px;
         left: 0;
         align-items: center;
         padding: 14px;
@@ -315,6 +316,7 @@ header nav.screen-small {
     height: 100vh;
     overflow: hidden;
     background-color: rgb(0, 0, 0);
+    margin-bottom: 60px;
 }
 
 .slider .slide {
@@ -390,28 +392,30 @@ header nav.screen-small {
 
 .slider .slide .content {
     position: absolute;
-    top: 50vh;
-    right: 60px;
+    top: 35vh;
+    right: 20px;
+    margin: 20px 0 20px 20px;
     color: rgb(255, 255, 255);
     direction: rtl;
     z-index: 1;
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 15px;
 }
 
 .slider .slide .content h1 {
     margin: 0;
-    padding: 10px;
-    font-size: 48px;
+
+    font-size: 40px;
     color: rgb(255, 255, 255);
 }
 
 .slider .slide .content p.p1 {
-    margin: 10px 0 0;
+
     padding: 10px;
     font-size: 18px;
-    width: 50%;
+
     color: rgb(207, 201, 201);
 }
 
@@ -494,6 +498,35 @@ header nav.screen-small {
 
 /*End Arrow-Button */
 
+@media(max-width: 1026px) {
+    .slider .slide .content h1 {
+        font-size: 30px;
+
+    }
+
+    .slider .slide .content p.p1 {
+        font-size: 15px;
+
+        color: rgb(207, 201, 201);
+    }
+}
+
+@media(max-width: 425px) {
+    .slider .slide .content h1 {
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    .slider .slide .content p.p1 {
+        font-size: 15px;
+        padding-left: 20px;
+    }
+
+    .slider .slide .content .p1 br {
+        display: none;
+    }
+}
+
 /* End Section */
 
 /* Start */
@@ -549,15 +582,17 @@ section.section-1 {
     flex-direction: column;
     justify-content: space-between;
     direction: rtl;
-    padding: 50px 20px;
+    margin-bottom: 60px;
     width: 100%;
-    margin: auto;
+
     gap: 30px;
     line-height: 25px;
 }
 
 section.section-1 h1 {
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: 600;
+
 }
 
 .h1-2 {
@@ -601,20 +636,23 @@ section.section-1 h1 {
         }
     }
 }
-@media(max-width: 530px){
+
+@media(max-width: 530px) {
     section.section-1 h1 {
         font-size: 18px;
 
     }
 
 }
+
 /* End Section-1 */
 
 hr {
-    background-color: #000000;
+    background-color: #c9c3c3;
     height: 3px;
     width: 80%;
     margin: auto;
+    margin-bottom: 60px;
 }
 
 /* Start Form */
@@ -631,14 +669,15 @@ form {
     padding: 3px 5px 10px 0;
     margin: auto;
     margin-top: 50px;
+    margin-bottom: 60px;
 }
 
 form p.create-id-1,
 .create-id-2 {
     font-size: 20px;
     font-weight: 600;
-    color: #115085;
-    text-shadow: #115085 0 0 1px;
+    color: #000000;
+
 }
 
 form p.create-id-2 {
@@ -725,36 +764,39 @@ form button {
         width: 70%;
         padding: 10px;
     }
-    form p.create-id-1,form p.create-id-2 {
-     font-size: 14px;
+
+    form p.create-id-1,
+    form p.create-id-2 {
+        font-size: 14px;
     }
 
-    }
-    form p {
-        font-size: 20px;
-    }
-
-    form input.name,
-    .email,
-    .id,
-    .phone-number {
-        width: 100%;
-    }
-
-    form article.id-and-phone-number {
-        width: 100%;
-        gap: 15px;
-    }
-
-    form article.id-and-phone-number input.id,
-    .phone-number {
-        width: 100%;
-    }
-
-    form button {
-        margin-top: 10px;
-    }
 }
+
+form p {
+    font-size: 20px;
+}
+
+form input.name,
+.email,
+.id,
+.phone-number {
+    width: 100%;
+}
+
+form article.id-and-phone-number {
+    width: 100%;
+    gap: 15px;
+}
+
+form article.id-and-phone-number input.id,
+.phone-number {
+    width: 100%;
+}
+
+form button {
+    margin-top: 10px;
+}
+
 
 @media(max-width: 574px) {
     form {
@@ -812,11 +854,13 @@ section.article-txt .txt-head {
     font-size: 28px;
     font-weight: 500;
 }
-@media(max-width: 352px){
-    .txt-head p{
+
+@media(max-width: 352px) {
+    .txt-head p {
         font-size: 20px;
     }
 }
+
 .txt-head {
     overflow: hidden;
 }
@@ -836,6 +880,7 @@ section.cards2 {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 60px;
 }
 
 section.cards2 .roqiatna {
@@ -940,6 +985,7 @@ section.counter-wrapper {
     gap: 10px;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .counter-wrapper::before {
