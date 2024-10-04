@@ -640,7 +640,6 @@ section.section-1 h1 {
 @media(max-width: 530px) {
     section.section-1 h1 {
         font-size: 18px;
-
     }
 
 }
@@ -1021,8 +1020,6 @@ section.counter-wrapper {
     font-size: 33px;
     color: #ddd;
 }
-
-
 
 .article-txt,
 .txt-head,
