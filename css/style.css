@@ -471,25 +471,23 @@ header nav.screen-small,
     }
 }
 
-@media(max-width: 768px) {
-    .arrows {
-        bottom: 70px;
-    }
-}
-
 @media(max-width: 425px) {
     .slider .slide .content h1 {
         font-size: 24px;
         padding-left: 20px;
     }
 
-    .slider .slide .content p.p1 {
+    .slider .slideِ .content p.p1 {
         font-size: 15px;
         padding-left: 20px;
     }
 
     .slider .slide .content .p1 br {
         display: none;
+    }
+
+    .arrows {
+        bottom: 70px;
     }
 }
 
