@@ -104,11 +104,10 @@ nav.screen-big ul li ul {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    margin-top: 27px;
+    margin-top: 26px;
     width: 200px;
     border-radius: 0 0 12px 12px;
 }
-
 
 nav.screen-big ul li ul li {
     width: 100%;
@@ -116,13 +115,14 @@ nav.screen-big ul li ul li {
 }
 
 nav.screen-big ul li ul li a {
-    color: black;
+    color: rgb(0, 0, 0);
     /* لون النص داخل القائمة المنسدلة */
     padding: 12px 16px;
     /* مساحة حول النص */
     display: block;
     /* جعل العناصر تأخذ مساحة كاملة */
-
+    direction: rtl;
+    display: flex;
 }
 
 nav.screen-big ul li ul li a:hover {
@@ -197,7 +197,7 @@ header nav.screen-small,
         flex-direction: column;
         align-items: center;
         position: fixed;
-        top: 73px;
+        top: 76px;
         left: -309px;
         /* بداية من خارج الشاشة */
         width: 309px;
@@ -221,9 +221,9 @@ header nav.screen-small,
         right: 10px;
         cursor: pointer;
         z-index: 1002;
-        font-size: 24px;
+        font-size: 22px;
         display: none;
-        color: #ee0b0b;
+        color: #115085;
         /* سيتم إظهارها عند فتح القائمة */
     }
 
@@ -372,16 +372,13 @@ header nav.screen-small,
 
 .slider .slide .content h1 {
     margin: 0;
-
     font-size: 40px;
     color: rgb(255, 255, 255);
 }
 
 .slider .slide .content p.p1 {
-
     padding: 10px;
     font-size: 18px;
-
     color: rgb(207, 201, 201);
 }
 
@@ -393,12 +390,11 @@ header nav.screen-small,
     position: absolute;
     left: 50%;
     margin-left: -30px;
-    bottom: 20px;
+    bottom: 25px;
 }
 
 .arrows path {
     stroke: #0dafcc;
-
     fill: transparent;
     stroke-width: 2px;
     animation: arrow 2s infinite;
@@ -467,12 +463,17 @@ header nav.screen-small,
 @media(max-width: 1026px) {
     .slider .slide .content h1 {
         font-size: 30px;
-
     }
 
     .slider .slide .content p.p1 {
         font-size: 15px;
         color: rgb(207, 201, 201);
+    }
+}
+
+@media(max-width: 768px) {
+    .arrows {
+        bottom: 50px;
     }
 }
 
@@ -683,14 +684,13 @@ section.cards2 .roqiatna h3,
 /* End cards2 */
 
 
-/* Start counter-wrapper */
+/* Start */
 
 
 section.counter-wrapper {
     background-color: #115085;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -744,7 +744,7 @@ section.counter-wrapper {
 
 .icon-counter i {
     font-size: 25px;
-    color: #ddd;
+    color: #ffffff;
 }
 
 /* End counter-wrapper */
@@ -776,13 +776,14 @@ section.section-1 h1 {
 
 /* فوائد العضوية */
 .benefits {
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
-    background-color: #ffffff;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    padding: 20px;
 }
 
 .benefit {
@@ -868,7 +869,7 @@ form input.name,
     font-size: 15px;
     font-weight: 600;
     text-align: right;
-    outline: none;
+    border: #000000 solid 1px;
     border-radius: 5px;
 }
 
@@ -889,15 +890,15 @@ form article.id-and-phone-number input.id,
 .phone-number {
     width: 50%;
     padding: 13px;
-    outline: none;
+    border: #000000 solid 1px;
 }
 
 form button {
-    width: 170px;
+    width: 160px;
     padding: 10px;
-    outline: none;
+    border: #000000 solid 1px;
     margin-top: 15px;
-    border-radius: 8px;
+    border-radius: 2px;
     font-size: 18px;
     font-weight: 700;
     background: #000000;
@@ -1087,7 +1088,7 @@ form button {
     width: 35%;
     direction: ltr;
 
-   line-height: 45px;
+    line-height: 45px;
 }
 
 .footer-top .footer-center i {
@@ -1187,7 +1188,7 @@ pre a {
     display: flex;
     align-items: center;
     justify-content: center;
-  
+
 }
 
 .footer-bottom {
