@@ -34,7 +34,9 @@ body {
     -ms-overflow-style: none;
     /* إخفاء التمرير */
 }
-
+body.no-scroll{
+    overflow: hidden;
+}
 /* Start Header Screan Big*/
 
 header {
