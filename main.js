@@ -38,15 +38,16 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', () => { 
     const menuButton = document.getElementById('menuButton'); 
     const menuContent = document.getElementById('menuContent'); 
-    const closeIcon = document.querySelector('.close-icon'); // تأكد من استخدام querySelector هنا 
-    const spans = menuButton.querySelectorAll('span'); // الحصول على جميع عناصر span
+    const closeIcon = document.querySelector('.close-icon'); 
+    const spans = menuButton.querySelectorAll('span'); 
 
     menuButton.addEventListener('click', () => { 
         menuContent.classList.toggle('active'); // تفعيل/تعطيل القائمة  
-        spans.forEach(span => span.classList.add('hidden')); // إخفاء جميع عناصر span
-        document.body.classList.add('no-scroll'); // منع التمرير
+        spans.forEach(span => span.classList.add('hidden')); // إخفاء جميع عناصر span عند فتح القائمة
+        document.body.classList.add('no-scroll'); // منع التمرير عند فتح القائمة
     }); 
 
+    // إغلاق القائمة عند الضغط على علامة الإغلاق
     closeIcon.addEventListener('click', closeMenu); 
 
     // لإغلاق القائمة عند الضغط خارجها  
@@ -62,6 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
         spans.forEach(span => span.classList.remove('hidden')); // إظهار جميع عناصر span
         document.body.classList.remove('no-scroll'); // إعادة التمرير
     } 
+
+    // تمكين التمرير عند الضغط على الروابط
+    const menuLinks = document.querySelectorAll('.choice-in-menu a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            closeMenu(); // إغلاق القائمة عند الضغط على أي رابط
+            document.body.classList.remove('no-scroll'); // التأكد من إعادة التمرير
+        });
+    });
 });
 
 // End Content Menu
