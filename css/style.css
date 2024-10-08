@@ -34,9 +34,13 @@ body {
     -ms-overflow-style: none;
     /* إخفاء التمرير */
 }
-body.no-scroll{
+
+body.no-scroll {
     overflow: hidden;
+    /* يمنع التمرير */
 }
+
+
 /* Start Header Screan Big*/
 
 header {
@@ -178,7 +182,21 @@ header nav.screen-small,
     bottom: 4px;
 }
 
+.hidden {
+    display: none;
+    /* إخفاء العنصر */
+}
+
 @media screen and (max-width :768px) {
+    .screen-small {
+        display: none;
+        /* إخفاء القائمة بشكل افتراضي */
+    }
+
+    .screen-small.active {
+        display: block;
+        /* إظهار القائمة عند تفعيلها */
+    }
 
     header.sticky,
     nav.screen-big ul.screen-big-none {
