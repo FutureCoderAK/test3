@@ -35,53 +35,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Start COntent Menu
 
-document.addEventListener('DOMContentLoaded', () => {
-    const menuButton = document.getElementById('menuButton');
-    const menuContent = document.getElementById('menuContent');
-    const closeIcon = document.querySelector('.close-icon'); // تأكد من استخدام querySelector هنا
+document.addEventListener('DOMContentLoaded', () => { 
+    const menuButton = document.getElementById('menuButton'); 
+    const menuContent = document.getElementById('menuContent'); 
+    const closeIcon = document.querySelector('.close-icon'); // تأكد من استخدام querySelector هنا 
+    const spans = menuButton.querySelectorAll('span'); // الحصول على جميع عناصر span
 
-    menuButton.addEventListener('click', () => {
-        menuContent.classList.toggle('active'); // تفعيل/تعطيل القائمة 
-        menuButton.classList.add('hidden'); // إخفاء زر المنيو باستخدام الفئة 
-    });
+    menuButton.addEventListener('click', () => { 
+        menuContent.classList.toggle('active'); // تفعيل/تعطيل القائمة  
+        spans.forEach(span => span.classList.add('hidden')); // إخفاء جميع عناصر span
+        document.body.classList.add('no-scroll'); // منع التمرير
+    }); 
 
-    closeIcon.addEventListener('click', closeMenu);
+    closeIcon.addEventListener('click', closeMenu); 
 
-    // لإغلاق القائمة عند الضغط خارجها 
-    document.addEventListener('click', (event) => {
-        if (!menuContent.contains(event.target) && !menuButton.contains(event.target)) {
-            closeMenu();
-        }
-    });
+    // لإغلاق القائمة عند الضغط خارجها  
+    document.addEventListener('click', (event) => { 
+        if (!menuContent.contains(event.target) && !menuButton.contains(event.target)) { 
+            closeMenu(); 
+        } 
+    }); 
 
-    // دالة لإغلاق القائمة 
-    function closeMenu() {
-        menuContent.classList.remove('active'); // إخفاء القائمة 
-        menuButton.classList.remove('hidden'); // إظهار زر المنيو بإزالة الفئة 
-    }
-});
-
-// إظهار القائمة عند النقر على زر القائمة
-document.querySelector('#menuButton').addEventListener('click', function() {
-    document.querySelector('.screen-small').classList.add('active');  // إظهار القائمة
-    document.body.classList.add('no-scroll');  // منع التمرير
-});
-
-// إغلاق القائمة وإعادة التمرير عند النقر على أيقونة الإغلاق
-document.querySelector('.close-icon').addEventListener('click', function() {
-    document.querySelector('.screen-small').classList.remove('active');  // إخفاء القائمة
-    document.body.classList.remove('no-scroll');  // إعادة التمرير
-});
-
-// إغلاق القائمة عند النقر خارج القائمة
-document.addEventListener('click', function(event) {
-    const menu = document.querySelector('.screen-small');
-    const menuButton = document.querySelector('#menuButton');
-    
-    if (menu.classList.contains('active') && !menu.contains(event.target) && !menuButton.contains(event.target)) {
-        menu.classList.remove('active');  // إخفاء القائمة
-        document.body.classList.remove('no-scroll');  // إعادة التمرير
-    }
+    // دالة لإغلاق القائمة  
+    function closeMenu() { 
+        menuContent.classList.remove('active'); // إخفاء القائمة  
+        spans.forEach(span => span.classList.remove('hidden')); // إظهار جميع عناصر span
+        document.body.classList.remove('no-scroll'); // إعادة التمرير
+    } 
 });
 
 // End Content Menu
