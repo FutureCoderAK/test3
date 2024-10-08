@@ -35,18 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Start COntent Menu
 
-// إظهار القائمة ومنع التمرير عند فتح القائمة
-document.querySelector('.menu-btn').addEventListener('click', function() {
-    document.querySelector('.screen-small').classList.add('active');  // إظهار القائمة
-    document.body.classList.add('no-scroll');  // منع التمرير
-});
-
-// إغلاق القائمة والسماح بالتمرير مرة أخرى عند النقر على أيقونة الإغلاق
-document.querySelector('.close-icon').addEventListener('click', function() {
-    document.querySelector('.screen-small').classList.remove('active');  // إخفاء القائمة
-    document.body.classList.remove('no-scroll');  // إعادة التمرير
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('menuButton');
     const menuContent = document.getElementById('menuContent');
@@ -70,6 +58,29 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeMenu() {
         menuContent.classList.remove('active'); // إخفاء القائمة 
         menuButton.classList.remove('hidden'); // إظهار زر المنيو بإزالة الفئة 
+    }
+});
+
+// إظهار القائمة عند النقر على زر القائمة
+document.querySelector('#menuButton').addEventListener('click', function() {
+    document.querySelector('.screen-small').classList.add('active');  // إظهار القائمة
+    document.body.classList.add('no-scroll');  // منع التمرير
+});
+
+// إغلاق القائمة وإعادة التمرير عند النقر على أيقونة الإغلاق
+document.querySelector('.close-icon').addEventListener('click', function() {
+    document.querySelector('.screen-small').classList.remove('active');  // إخفاء القائمة
+    document.body.classList.remove('no-scroll');  // إعادة التمرير
+});
+
+// إغلاق القائمة عند النقر خارج القائمة
+document.addEventListener('click', function(event) {
+    const menu = document.querySelector('.screen-small');
+    const menuButton = document.querySelector('#menuButton');
+    
+    if (menu.classList.contains('active') && !menu.contains(event.target) && !menuButton.contains(event.target)) {
+        menu.classList.remove('active');  // إخفاء القائمة
+        document.body.classList.remove('no-scroll');  // إعادة التمرير
     }
 });
 
