@@ -35,6 +35,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Start COntent Menu
 
+// إظهار القائمة ومنع التمرير عند فتح القائمة
+document.querySelector('.menu-btn').addEventListener('click', function() {
+    document.querySelector('.screen-small').classList.add('active');  // إظهار القائمة
+    document.body.classList.add('no-scroll');  // منع التمرير
+});
+
+// إغلاق القائمة والسماح بالتمرير مرة أخرى عند النقر على أيقونة الإغلاق
+document.querySelector('.close-icon').addEventListener('click', function() {
+    document.querySelector('.screen-small').classList.remove('active');  // إخفاء القائمة
+    document.body.classList.remove('no-scroll');  // إعادة التمرير
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('menuButton');
     const menuContent = document.getElementById('menuContent');
