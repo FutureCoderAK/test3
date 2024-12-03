@@ -46,7 +46,6 @@ body.no-scroll {
 header {
     position: absolute;
     width: 100%;
-    background-color: hsla(198, 80%, 30%, 0.5);
     position: fixed;
     top: 0;
     left: 0;
@@ -60,7 +59,7 @@ header {
 
 header.sticky {
     padding: 10px 100px;
-    background-color: rgb(0, 0, 0);
+    background-color: hsla(198, 80%, 30%, 0.5);
 }
 
 header nav.screen-big {
@@ -142,9 +141,9 @@ nav.screen-big ul li ul.show {
 }
 
 header img.logo {
-    width: 60px;
+    width: 70px;
     position: relative;
-    transition: 0.6s;
+    transition: 10s;
 }
 
 header nav.screen-small,
@@ -217,17 +216,17 @@ header nav.screen-small,
         flex-direction: column;
         align-items: center;
         position: fixed;
-        top: 76px;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        top: 0px;
         left: -309px;
         /* بداية من خارج الشاشة */
         width: 309px;
         height: 100vh;
-        background-color: #ffffff;
-        transition: left 0.3s ease-in-out;
         z-index: 1000;
         padding: 14px;
-        box-sizing: border-box;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: left 0.3s ease-in-out;
     }
 
     .menu-content.active {
@@ -285,7 +284,6 @@ header nav.screen-small,
     }
 
     nav.screen-small .menu-content .logoAboutUs p {
-
         padding: 3px;
         text-align: center;
     }
@@ -313,7 +311,7 @@ header nav.screen-small,
     width: 100%;
     height: 100vh;
     visibility: hidden;
-    opacity: 0;
+    opacity: 1;
     /* زيادة المدة هنا */
     animation: slider 50s linear infinite;
     /* زيادة المدة هنا */
@@ -378,7 +376,7 @@ header nav.screen-small,
 
 .slider .slide .content {
     position: absolute;
-    top: 35vh;
+    top: 20vh;
     right: 20px;
     margin: 20px 0 20px 20px;
     color: rgb(255, 255, 255);
@@ -393,7 +391,17 @@ header nav.screen-small,
 .slider .slide .content h1 {
     margin: 0;
     font-size: 40px;
+    color: #e7e7e7;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.slider .slide .content h2 {
+    margin: 0;
+    font-size: 40px;
     color: rgb(255, 255, 255);
+    background: #000;
+    object-fit: cover;
 }
 
 .slider .slide .content p.p1 {
@@ -703,23 +711,33 @@ section.cards2 .roqiatna h3,
 
 
 /* Start */
+.achievement {
+    background: #ffffff;
+}
 
+h1.my-achievement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    text-align: center;
+    margin: 3rem 0;
+    color: #3774a7;
+
+}
 
 section.counter-wrapper {
-    background-color: #115085;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 15px 9%;
+    padding: 15px;
     margin-top: 50px;
     position: relative;
     justify-content: space-around;
     gap: 10px;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 50px;
+
 }
 
 .counter-wrapper::before {
@@ -729,18 +747,23 @@ section.counter-wrapper {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
 
 .counter {
     text-align: center;
-    color: #ffffff;
+    color: #000000;
     z-index: 2;
     position: relative;
-    border-bottom: #5f5b5b 1px solid;
+    border: #000000 2px solid;
+    border-radius: 50%;
     padding-bottom: 15px;
     width: 250px;
+    height: 250px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 621px) {
@@ -760,8 +783,9 @@ section.counter-wrapper {
     font-weight: 500;
 }
 
-.icon-counter i {
-    font-size: 25px;
+.img-counter img {
+    width: 140px;
+    height: 140px;
     color: #ffffff;
 }
 
@@ -770,7 +794,7 @@ section.counter-wrapper {
 
 /* Start  benifit */
 
-section.section-1 {
+section.benifits {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -779,11 +803,12 @@ section.section-1 {
     direction: rtl;
     margin-bottom: 60px;
     width: 100%;
-    gap: 30px;
-    line-height: 25px;
+    background-repeat: no-repeat;
+    gap: 20px;
+
 }
 
-section.section-1 h1 {
+section.cards-benifit h1 {
     font-size: 20px;
     font-weight: 600;
 }
@@ -792,31 +817,40 @@ section.section-1 h1 {
     display: none;
 }
 
-/* فوائد العضوية */
-.benefits {
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.cards-benifits {
+    line-height: 25px;
     display: flex;
+    gap: 30px;
     justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
-.benefit {
-    opacity: 0;
+.card-benifit {
+    height: 350px;
+    width: 300px;
+    border-radius: 12px;
+    color: #000000;
+    padding: 5px;
+    box-shadow: #000000 0 0 5px;
 }
 
-.visible {
-    opacity: 1;
-    transition: opacity 0s ease;
-    /* لا يوجد تأثير تدريجي */
+.card-benifit img {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px 12px 0 0;
+}
+
+
+.cards-benifits-the-end {
+    flex-direction: row;
+    display: flex;
+    gap: 20px;
 }
 
 @media(max-width: 768px) {
 
-    section.section-1 h1 {
+    section.cards-benifit h1 {
         font-size: 22px;
     }
 
@@ -832,7 +866,7 @@ section.section-1 h1 {
 }
 
 @media(max-width: 530px) {
-    section.section-1 h1 {
+    section.cards-benifit h1 {
         font-size: 18px;
     }
 }
@@ -1105,27 +1139,25 @@ form button {
 .footer-top .footer-center {
     width: 35%;
     direction: ltr;
-
     line-height: 45px;
+
 }
+
 
 .footer-top .footer-center i {
     background-color: #000000;
     color: #ffffff;
     font-size: 20px;
     padding: 5px;
-    width: 38px;
-    height: 38px;
-    border-radius: 19px;
+    border-radius: 50%;
     text-align: center;
-    margin: 10px 15px;
-    vertical-align: middle;
+    margin: 10px;
 }
 
 .footer-top .footer-center i.icon-mail {
     font-size: 20px;
-    line-height: 38px;
     padding: 5px;
+    border-radius: 50%;
 }
 
 .footer-top .footer-center p,
@@ -1261,17 +1293,6 @@ pre a {
     }
 }
 
-
-h1.my-achievement {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    text-align: center;
-    margin: 3rem 0;
-    color: #000000;
-}
-
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -1323,7 +1344,7 @@ h1.my-achievement {
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 0 40px;
+    padding: 20px;
     color: #000;
     background: #fff;
     position: relative;
@@ -1341,46 +1362,8 @@ h1.my-achievement {
     box-shadow: 0 0 25px #000000;
 }
 
-.timeline-img-right,
-.timeline-img-left {
-    color: #fff;
-    height: 75px;
-    width: 75px;
-    border-radius: 50%;
-    position: absolute;
-    top: 10%;
-}
 
-.timeline-img-right {
-    left: -38px;
-}
 
-.timeline-img-left {
-    right: -38px;
-}
-
-.timeline-img-right img,
-.timeline-img-left img {
-    width: 70px;
-    height: 70px;
-    border-radius: 35px;
-    border: 6px solid #ffffff;
-    box-shadow: 0 0 5px #000000;
-}
-
-.right-container:hover img{
-    width: 120px;
-    height: 120px;
-    border-radius: 10px; /* تتحول إلى مربع عند مرور الماوس */
-    right: -80px; /* تحرك إلى اليسار */
-}
-
-.left-container:hover img {
-    width: 120px;
-    height: 120px;
-    border-radius: 10px; /* تتحول إلى مربع عند مرور الماوس */
-    left: -80px; /* تحرك إلى اليمين */
-}
 .right-container {
     right: 0;
 
@@ -1415,23 +1398,9 @@ h1.my-achievement {
 
 @media screen and (max-width: 768px) {
 
-    .right-container:hover img{
-        width: 70px;
-        height: 70px;
-        border-radius: 35px;
-        border: 6px solid #ffffff;
-        box-shadow: 0 0 5px #000000;
-    }
-    
-    
-    .left-container:hover img {
-        width: 70px;
-    height: 70px;
-    border-radius: 35px;
-    border: 6px solid #ffffff;
-    box-shadow: 0 0 5px #000000;
-}
-    
+
+
+
     .timeline {
         margin: 50px auto;
         gap: 30px;
@@ -1457,28 +1426,5 @@ h1.my-achievement {
         right: 0;
     }
 
-    .timeline-img-right,
-    .timeline-img-left,
-    :nth-child(even) .timeline-img-right,
-    .timeline-img-left {
 
-        left: 50%;
-        top: -39px;
-        right: auto;
-        transform: translateY(0) translateX(-50%);
-    }
-
-    .timeline-img-right :before,
-    .timeline-img-left :before,
-    .timeline-img-right :after,
-    .timeline-img-left :after {
-        top: 50%;
-        left: -12px;
-        transform: translateY(-50%) translateX(0);
-    }
-
-    .timeline-img-right :after,
-    .timeline-img-left :after {
-        left: calc(100% + 6px);
-    }
 }
