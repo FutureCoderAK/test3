@@ -470,6 +470,92 @@ header nav.screen-small,
 
 
 
+/* Start Button Scroll Up */
+
+#scrollBtn {
+	display: none;
+	/* زر مخفي بشكل افتراضي */
+	position: fixed;
+	/* يظل في نفس المكان حتى عند التمرير */
+	bottom: 20px;
+	/* المسافة من الأسفل */
+	right: 30px;
+	/* المسافة من اليمين */
+	z-index: 99;
+	/* وضع الزر فوق كل العناصر الأخرى */
+	border: none;
+	/* بدون حدود */
+	outline: none;
+	/* بدون تأثيرات حول الزر */
+	background-color: #000000;
+	/* لون الخلفية */
+	color: rgb(255, 255, 255);
+	/* لون النص */
+	cursor: pointer;
+	/* شكل المؤشر عند التمرير */
+	padding: 15px;
+	/* حجم الزر */
+	border-radius: 10px;
+	/* زوايا دائرية */
+	font-size: 18px;
+	/* حجم النص */
+}
+
+#scrollBtn:hover {
+	background-color: #333;
+	/* لون الخلفية عند التمرير على الزر */
+}
+
+@media(max-width: 425px) {
+	#scrollBtn {
+		right: 10px;
+	}
+}
+
+/* End Button Scroll Up */
+
+
+/* Start Our about */
+
+article.our-about {
+	width: 50%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 50px;
+}
+
+article.our-about article.color-paint {
+	background: #fbcb1f;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-bottom: -60px;
+	margin-right: -60px;
+}
+
+article.our-about h1 {
+	font-size: 25px;
+	color: #115085;
+}
+
+article.our-about p {
+	text-align: center;
+	direction: rtl;
+}
+
+@media(max-width: 712px) {
+	article.our-about {
+		width: 90%;
+	}
+}
+
+/* End Our about */
+
 /* start Footer */
 
 .footer-distributed {
