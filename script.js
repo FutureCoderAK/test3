@@ -174,5 +174,23 @@ let timer = setInterval(autoPlay, 4000);
 // End Slider
 
 
+// Start Button Scroll Up
+
+// إظهار الزر عند النزول للأسفل
+window.onscroll = function () {
+    var scrollBtn = document.getElementById("scrollBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+};
+// وظيفة الانتقال إلى الأعلى
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+// End Button Scroll Up
 
 
