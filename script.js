@@ -78,12 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Start Slider
+
 const slides = document.querySelector(".slider").children;
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const indicator = document.querySelector(".indicator");
 let index = 0;
-
 
 prev.addEventListener("click", function () {
     prevSlide();
@@ -95,7 +95,6 @@ next.addEventListener("click", function () {
     nextSlide();
     updateCircleIndicator();
     resetTimer();
-
 })
 
 // create circle indicators
@@ -160,16 +159,15 @@ function resetTimer() {
     // stop timer 
     clearInterval(timer);
     // then started again timer
-    timer = setInterval(autoPlay, 4000);
+    timer = setInterval(autoPlay, 10000);
 }
-
 
 function autoPlay() {
     nextSlide();
     updateCircleIndicator();
 }
 
-let timer = setInterval(autoPlay, 4000);
+let timer = setInterval(autoPlay, 10000);
 
 // End Slider
 
@@ -194,3 +192,98 @@ function scrollToTop() {
 // End Button Scroll Up
 
 
+//   Start counter-wrapper
+
+const counters = document.querySelectorAll('.counter');
+
+const animationDuration = 2000; // desired animation duration in milliseconds
+const incrementAmount = 100; // increment amount for values 200 and above
+
+counters.forEach((counter) => {
+    const target = counter.querySelector('[data-target]').dataset.target;
+    const countElement = counter.querySelector('.count');
+    let currentCount = 0;
+    let startTime;
+    let animationStarted = false;
+
+    function incrementCount() {
+        const currentTime = performance.now();
+        const elapsed = currentTime - startTime;
+        const progress = elapsed / animationDuration;
+        currentCount = Math.min(target, progress * target);
+
+        if (currentCount < 200) {
+            currentCount = Math.round(progress * target); // increment slowly for values less than 200
+        } else {
+            currentCount = Math.round(progress * target / incrementAmount) * incrementAmount; // increment by 100 for values 200 and above
+        }
+
+        countElement.textContent = currentCount + '+';
+
+        if (elapsed < animationDuration) {
+            requestAnimationFrame(incrementCount);
+        } else {
+            countElement.textContent = target + '+';
+        }
+    }
+
+    function checkIfInView() {
+        const rect = counter.getBoundingClientRect();
+        const viewHeight = window.innerHeight;
+        const offset = 100;
+
+        if (rect.top <= viewHeight + offset && !animationStarted) {
+            animationStarted = true;
+            startTime = performance.now();
+            incrementCount();
+        }
+    }
+    window.addEventListener('scroll', checkIfInView);
+    checkIfInView(); // initial check
+});
+
+// End counter-wrapper
+//  Start  benifit
+
+// دا الانيميشن بتاع فقرات فوائد العضوية
+const achievements = document.querySelectorAll('.achievement');
+let delay = 1500; // التأخير بين كل فقرة (1.5 ثانية)
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            achievements.forEach((achievement, index) => {
+                setTimeout(() => {
+                    achievement.classList.add('visible');
+                }, delay * index);
+            });
+            observer.disconnect(); // إيقاف المراقبة بعد التفعيل
+        }
+    });
+});
+
+observer.observe(document.getElementById('achievements'));
+
+//  End  benifit
+
+
+///////////////////////////////////
+
+        // اختر العنصر الذي تريد أن يكون دائمًا في حالة hover
+        const defaultHoverElement = document.querySelector('.default-hover');
+
+        // اختر كل العناصر المشابهة
+        const hoverItems = document.querySelectorAll('.hover-item');
+
+        // أضف الأحداث لكل العناصر
+        hoverItems.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                // إزالة تأثير hover الافتراضي
+                defaultHoverElement.classList.remove('default-hover');
+            });
+
+            item.addEventListener('mouseout', () => {
+                // إعادة تأثير hover الافتراضي
+                defaultHoverElement.classList.add('default-hover');
+            });
+        });
