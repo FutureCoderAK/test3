@@ -279,9 +279,11 @@ hoverItems.forEach(item => {
 // End Hover Counter 
 
 
+
 // Start Create Member
 // المراجع إلى الحقول
 const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
 const phoneInput = document.getElementById('phone');
 const nationalIdInput = document.getElementById('nationalId');
 const nameError = document.getElementById('nameError');
@@ -306,6 +308,11 @@ const nameValue = nameInput.value;
 if (!/^[\u0600-\u06FF\s]+$/.test(nameValue) && !/^[A-Za-z\s]+$/.test(nameValue)) {
     valid = false;
 }
+// عند الكتابة في الحقل
+emailInput.addEventListener('input', () => {
+    // تحويل النص إلى أحرف صغيرة وإزالة المسافات
+    emailInput.value = emailInput.value.toLowerCase().replace(/\s+/g, '');
+});
 // التحقق أثناء الإدخال في حقل رقم الموبايل
 phoneInput.addEventListener('input', function () {
     phoneInput.value = phoneInput.value.replace(/[^0-9]/g, ''); // السماح بالأرقام فقط
@@ -337,3 +344,58 @@ form.addEventListener('submit', function (e) {
     }
 });
 //  End Create Member
+
+// Start Translation
+// تغيير اللغة حسب القيمة المخزنة في LocalStorage
+function changeLanguage(lang) {
+    document.getElementById("welcome").innerText = translations[lang].welcome;
+    document.getElementById("about").innerText = translations[lang].about;
+    document.getElementById("btn-signup").innerText = translations[lang]["btn-signup"];
+}
+
+// التبديل بين اللغات
+function toggleLanguage() {
+    const currentLang = document.documentElement.lang === "ar" ? "en" : "ar";
+    document.documentElement.lang = currentLang;
+    changeLanguage(currentLang);
+
+    // حفظ اللغة المختارة في LocalStorage
+    localStorage.setItem('language', currentLang);
+
+    // تبديل اتجاه النص (اللغة العربية من اليمين لليسار)
+    if (currentLang === "ar") {
+        document.body.style.direction = "rtl"; // تغيير اتجاه النص إلى اليمين لليسار
+    } else {
+        document.body.style.direction = "ltr"; // العودة إلى الاتجاه العادي
+    }
+
+    // تبديل العلم والنص في الزر
+    const flag = document.getElementById('flag');
+    const languageText = document.getElementById('language-text');
+    if (currentLang === 'en') {
+        flag.src = 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg';
+        languageText.textContent = 'En';
+    } else {
+        flag.src = 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg';
+        languageText.textContent = 'Ar';
+    }
+}
+
+// تعيين اللغة الافتراضية عند تحميل الصفحة بناءً على LocalStorage
+window.onload = function () {
+    const savedLang = localStorage.getItem('language') || 'ar'; // إذا كانت اللغة غير موجودة في LocalStorage يتم تعيين اللغة الافتراضية إلى "ar"
+    document.documentElement.lang = savedLang;
+    changeLanguage(savedLang);
+
+    // تغيير اتجاه النص حسب اللغة المخزنة
+    if (savedLang === 'ar') {
+        document.body.style.direction = "rtl";
+        document.getElementById('flag').src = 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg';
+        document.getElementById('language-text').textContent = 'Ar';
+    } else {
+        document.body.style.direction = "ltr";
+        document.getElementById('flag').src = 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg';
+        document.getElementById('language-text').textContent = 'En';
+    }
+};
+// Start Translation
