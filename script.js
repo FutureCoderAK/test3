@@ -166,11 +166,9 @@ function autoPlay() {
     nextSlide();
     updateCircleIndicator();
 }
-
 let timer = setInterval(autoPlay, 10000);
 
 // End Slider
-
 
 // Start Button Scroll Up
 
@@ -195,38 +193,31 @@ function scrollToTop() {
 //   Start counter-wrapper
 
 const counters = document.querySelectorAll('.counter');
-
 const animationDuration = 2000; // desired animation duration in milliseconds
 const incrementAmount = 100; // increment amount for values 200 and above
-
 counters.forEach((counter) => {
     const target = counter.querySelector('[data-target]').dataset.target;
     const countElement = counter.querySelector('.count');
     let currentCount = 0;
     let startTime;
     let animationStarted = false;
-
     function incrementCount() {
         const currentTime = performance.now();
         const elapsed = currentTime - startTime;
         const progress = elapsed / animationDuration;
         currentCount = Math.min(target, progress * target);
-
         if (currentCount < 200) {
             currentCount = Math.round(progress * target); // increment slowly for values less than 200
         } else {
             currentCount = Math.round(progress * target / incrementAmount) * incrementAmount; // increment by 100 for values 200 and above
         }
-
         countElement.textContent = currentCount + '+';
-
         if (elapsed < animationDuration) {
             requestAnimationFrame(incrementCount);
         } else {
             countElement.textContent = target + '+';
         }
     }
-
     function checkIfInView() {
         const rect = counter.getBoundingClientRect();
         const viewHeight = window.innerHeight;
@@ -243,6 +234,7 @@ counters.forEach((counter) => {
 });
 
 // End counter-wrapper
+
 //  Start  benifit
 
 // دا الانيميشن بتاع فقرات فوائد العضوية
@@ -261,29 +253,87 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 });
-
 observer.observe(document.getElementById('achievements'));
 
 //  End  benifit
 
+// Start Hover Counter 
+// اختر العنصر الذي تريد أن يكون دائمًا في حالة hover
+const defaultHoverElement = document.querySelector('.default-hover');
 
-///////////////////////////////////
+// اختر كل العناصر المشابهة
+const hoverItems = document.querySelectorAll('.hover-item');
 
-        // اختر العنصر الذي تريد أن يكون دائمًا في حالة hover
-        const defaultHoverElement = document.querySelector('.default-hover');
+// أضف الأحداث لكل العناصر
+hoverItems.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        // إزالة تأثير hover الافتراضي
+        defaultHoverElement.classList.remove('default-hover');
+    });
 
-        // اختر كل العناصر المشابهة
-        const hoverItems = document.querySelectorAll('.hover-item');
+    item.addEventListener('mouseout', () => {
+        // إعادة تأثير hover الافتراضي
+        defaultHoverElement.classList.add('default-hover');
+    });
+});
+// End Hover Counter 
 
-        // أضف الأحداث لكل العناصر
-        hoverItems.forEach(item => {
-            item.addEventListener('mouseover', () => {
-                // إزالة تأثير hover الافتراضي
-                defaultHoverElement.classList.remove('default-hover');
-            });
 
-            item.addEventListener('mouseout', () => {
-                // إعادة تأثير hover الافتراضي
-                defaultHoverElement.classList.add('default-hover');
-            });
-        });
+// Start Create Member
+// المراجع إلى الحقول
+const nameInput = document.getElementById('name');
+const phoneInput = document.getElementById('phone');
+const nationalIdInput = document.getElementById('nationalId');
+const nameError = document.getElementById('nameError');
+const phoneError = document.getElementById('phoneError');
+const nationalIdError = document.getElementById('nationalIdError');
+const form = document.getElementById('nameForm');
+// التحقق أثناء الإدخال في حقل الاسم
+nameInput.addEventListener('input', function () {
+    const value = nameInput.value;
+    // السماح فقط بالعربية أو الإنجليزية وعدم الخلط بينهما
+    if (/^[\u0600-\u06FF\s]+$/.test(value)) {
+        nameError.textContent = ''; // إدخال عربي صحيح
+    } else if (/^[A-Za-z\s]+$/.test(value)) {
+        nameError.textContent = ''; // إدخال إنجليزي صحيح
+    } else {
+        nameError.textContent = 'يجب إدخال الأسم باللغة العربية فقط أو باللغة الإنجلبزبة فقط بدون أرقام أو خلط.';
+        nameInput.value = value.slice(0, -1); // إزالة آخر حرف خاطئ
+    }
+});
+// التحقق من الاسم
+const nameValue = nameInput.value;
+if (!/^[\u0600-\u06FF\s]+$/.test(nameValue) && !/^[A-Za-z\s]+$/.test(nameValue)) {
+    valid = false;
+}
+// التحقق أثناء الإدخال في حقل رقم الموبايل
+phoneInput.addEventListener('input', function () {
+    phoneInput.value = phoneInput.value.replace(/[^0-9]/g, ''); // السماح بالأرقام فقط
+});
+// التحقق أثناء الإدخال في حقل الرقم القومي
+nationalIdInput.addEventListener('input', function () {
+    nationalIdInput.value = nationalIdInput.value.replace(/[^0-9]/g, ''); // السماح بالأرقام فقط
+});
+// التحقق عند إرسال النموذج
+form.addEventListener('submit', function (e) {
+    let valid = true;
+    // التحقق من رقم الموبايل
+    if (!/^(010|011|012|015)\d{8}$/.test(phoneInput.value)) {
+        phoneError.textContent = 'رقم الموبايل خطأ.';
+        valid = false;
+    } else {
+        phoneError.textContent = '';
+    }
+    // التحقق من الرقم القومي
+    if (nationalIdInput.value.length !== 14) {
+        nationalIdError.textContent = 'الرقم القومي خطأ. يجب إدخال 14 رقمًا.';
+        valid = false;
+    } else {
+        nationalIdError.textContent = '';
+    }
+    // منع الإرسال إذا كان هناك خطأ
+    if (!valid) {
+        e.preventDefault();
+    }
+});
+//  End Create Member
