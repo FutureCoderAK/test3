@@ -185,6 +185,27 @@ header nav.screen-small,
 	/* إخفاء العنصر */
 }
 
+.language-switcher {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	background-color: #007bff;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 20px;
+	cursor: pointer;
+	border: none;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+.language-switcher img {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+
 @media screen and (max-width :768px) {
 	.screen-small {
 		display: none;
@@ -285,6 +306,30 @@ header nav.screen-small,
 	nav.screen-small .menu-content .logoAboutUs p {
 		padding: 3px;
 		text-align: center;
+	}
+
+	.icons-menu {
+		display: flex;
+		flex-direction: row;
+		padding-top: 200px;
+		gap: 15px;
+		font-size: 20px;
+	}
+
+	.icons-menu i.icon-facebook {
+		color: #0c64fc;
+	}
+
+	.icons-menu i.icon-whatsapp {
+		color: #19a607;
+	}
+
+	.icons-menu i.icon-phone {
+		color: #bc0419;
+	}
+
+	.icons-menu i.icon-mail {
+		color: #000000;
 	}
 }
 
@@ -1104,7 +1149,6 @@ article.error {
 
 
 .footer-top .footer-center i {
-	color: #ffffff;
 	font-size: 20px;
 	border-radius: 50%;
 	text-align: center;
@@ -1114,7 +1158,7 @@ article.error {
 .footer-top .footer-center i.icon-mail {
 	font-size: 20px;
 	border-radius: 50%;
-	margin-right: 18px;
+	margin-right: 10px;
 }
 
 .footer-top .footer-center p,
@@ -1183,19 +1227,37 @@ pre a {
 	text-align: center;
 }
 
+.footer-center article a i.icon-whatsapp {
+	color: #19a607;
+	background-color: #ffffff;
+}
+
+.footer-center article a i.icon-phone {
+	color: #bc0419;
+	background-color: #ffffff;
+}
+
+.footer-center article a i.icon-mail {
+	color: #000000;
+	background-color: #ffffff;
+}
+
 .footer-top .footer-icons a {
 	display: inline-block;
 	width: 35px;
 	height: 35px;
 	cursor: pointer;
-	background-color: #000000;
+	background-color: #ffffff;
 	border-radius: 2px;
 	font-size: 20px;
-	color: #ffffff;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
+}
+
+.footer-right article.footer-icons a i.icon-facebook {
+	color: #0c64fc;
 }
 
 .footer-bottom {
