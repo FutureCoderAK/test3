@@ -22,6 +22,13 @@
         </article>
         <nav class="screen-big">
             <ul class="screen-big-none">
+                <li>
+                    <button class="language-switcher" onclick="toggleLanguage()" id="languageSwitcher">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg"
+                            id="flag" alt="flag">
+                        <span id="language-text">Ar</span>
+                    </button>
+                </li>
                 <li><a href="#footer-distributed">اتصل بنا</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">عضوية<i class="icon-down-open-1 dropbtn"></i></a>
@@ -41,11 +48,6 @@
                 <!-- علامة الغلق داخل القائمة -->
                 <article class="logoAboutUs">
                     <img src="images/Association of Arab Accountants and Auditors.png" class="logo-screen-small">
-                    <p>تأسست جمعية المحاسبين والمراجعين العرب
-                        <br>
-                        ( 4A’s ) طبقاً لأحكام القانون المصري رقم 84 لسنة
-                        2002 م بشأن الجمعيات والمؤسسات الأهلية.
-                    </p>
                 </article>
                 <article class="choice-in-menu">
                     <a href="index.html">الرئيسية</a>
@@ -53,6 +55,26 @@
                     <a href="#text-benefit">مميزات العضوية</a>
                     <a href="#nameForm">إنشاء عضوية</a>
                     <a class="contect-in-menu" href="#footer-distributed">اتصل بنا</a>
+                    <a href="#">
+                        <button class="language-switcher" onclick="toggleLanguage()" id="languageSwitcher">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg"
+                                id="flag" alt="flag">
+                            <span id="language-text">Ar</span>
+                        </button></a>
+                </article>
+                <article class="icons-menu">
+                    <a href="https://www.facebook.com/acc4arab.org?mibextid=ZbWKwL"><i class="icon-facebook"></i></a>
+                    <a href="mailto:info@acc4arab.org">
+                        <i class="icon-mail"></i>
+                    </a>
+
+                    <a href="https://wa.me/1271090059">
+                        <i class="icon-whatsapp"></i>
+                    </a>
+
+                    <a href="tel:+20 1271090059">
+                        <i class="icon-phone"></i>
+                    </a>
                 </article>
             </article>
         </nav>
@@ -137,7 +159,7 @@
             من نحن
         </h1>
         <p>
-            تأسست جمعية المحاسبين والمراجعين العرب ( 4A’s ) طبقاً لأحكام القانون المصري رقم 84 لسنة 2002 م بشأن
+            تأسست جمعية المحاسبين والمراجعين العرب طبقاً لأحكام القانون المصري رقم 84 لسنة 2002 م بشأن
             الجمعيات والمؤسسات الأهلية.
         </p>
     </article>
@@ -400,7 +422,8 @@
                         <pre>+20 1271090059     </pre>
                     </a>
                 </article>
-                <article><a href="mailto:info@acc4arab.org">
+                <article>
+                    <a href="mailto:info@acc4arab.org">
                         <i class="icon-mail"></i>
                         <p>info@acc4arab.org</p>
                     </a>
@@ -426,7 +449,18 @@
     </footer>
     <!-- End Footeer -->
 
+
+
+
+    <h1 id="welcome">مرحبًا بكم في موقعنا</h1>
+    <p id="about">من نحن</p>
+    <button id="btn-signup">التسجيل</button>
+
+
+
+
     <script src="script.js"></script>
+    <script src="translations-en-ar.js"></script>
 
 </body>
 
