@@ -359,16 +359,6 @@ function toggleLanguage() {
     document.documentElement.lang = currentLang;
     changeLanguage(currentLang);
 
-    // حفظ اللغة المختارة في LocalStorage
-    localStorage.setItem('language', currentLang);
-
-    // تبديل اتجاه النص (اللغة العربية من اليمين لليسار)
-    if (currentLang === "ar") {
-        document.body.style.direction = "rtl"; // تغيير اتجاه النص إلى اليمين لليسار
-    } else {
-        document.body.style.direction = "ltr"; // العودة إلى الاتجاه العادي
-    }
-
     // تبديل العلم والنص في الزر
     const flag = document.getElementById('flag');
     const languageText = document.getElementById('language-text');
@@ -381,21 +371,4 @@ function toggleLanguage() {
     }
 }
 
-// تعيين اللغة الافتراضية عند تحميل الصفحة بناءً على LocalStorage
-window.onload = function () {
-    const savedLang = localStorage.getItem('language') || 'ar'; // إذا كانت اللغة غير موجودة في LocalStorage يتم تعيين اللغة الافتراضية إلى "ar"
-    document.documentElement.lang = savedLang;
-    changeLanguage(savedLang);
-
-    // تغيير اتجاه النص حسب اللغة المخزنة
-    if (savedLang === 'ar') {
-        document.body.style.direction = "rtl";
-        document.getElementById('flag').src = 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg';
-        document.getElementById('language-text').textContent = 'Ar';
-    } else {
-        document.body.style.direction = "ltr";
-        document.getElementById('flag').src = 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg';
-        document.getElementById('language-text').textContent = 'En';
-    }
-};
 // Start Translation
