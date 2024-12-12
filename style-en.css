@@ -71,9 +71,17 @@ nav.screen-big ul li ul li a {
     direction: ltr;
 }
 
-article.our-about {
-    width: 60%;
+
+@media(max-width:768px) {
+    article.our-about {}
 }
+
+@media(max-width: 598px) {
+    article.our-about {
+        width: 93%;
+    }
+}
+
 
 article.our-about article.color-paint {
     margin-left: -170px;
