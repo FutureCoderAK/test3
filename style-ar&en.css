@@ -618,7 +618,7 @@ article.our-about p {
 
 @media(max-width: 712px) {
 	article.our-about {
-		width: 90%;
+		width: 100%;
 	}
 }
 
@@ -636,7 +636,7 @@ section.cards2 {
 }
 
 section.cards2 .roqiatna {
-	width: 40%;
+	width: 45%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -654,7 +654,7 @@ section.cards2 img {
 }
 
 section.cards2 .resaltna {
-	width: 40%;
+	width: 45%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -669,6 +669,7 @@ section.cards2 .resaltna {
 section.cards2 .roqiatna h3,
 .resaltna h3 {
 	text-align: center;
+	font-size: 15px;
 }
 
 .resaltna::before,
