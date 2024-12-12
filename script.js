@@ -344,31 +344,3 @@ form.addEventListener('submit', function (e) {
     }
 });
 //  End Create Member
-
-// Start Translation
-// تغيير اللغة حسب القيمة المخزنة في LocalStorage
-function changeLanguage(lang) {
-    document.getElementById("welcome").innerText = translations[lang].welcome;
-    document.getElementById("about").innerText = translations[lang].about;
-    document.getElementById("btn-signup").innerText = translations[lang]["btn-signup"];
-}
-
-// التبديل بين اللغات
-function toggleLanguage() {
-    const currentLang = document.documentElement.lang === "ar" ? "en" : "ar";
-    document.documentElement.lang = currentLang;
-    changeLanguage(currentLang);
-
-    // تبديل العلم والنص في الزر
-    const flag = document.getElementById('flag');
-    const languageText = document.getElementById('language-text');
-    if (currentLang === 'en') {
-        flag.src = 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg';
-        languageText.textContent = 'En';
-    } else {
-        flag.src = 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg';
-        languageText.textContent = 'Ar';
-    }
-}
-
-// Start Translation
